@@ -17,7 +17,7 @@ body{
 #header{
   background:#373737;
   width:100%;
-  height:55px;
+  height:60px;
   z-index:100;
 
 }
@@ -26,13 +26,14 @@ body{
   display:none;
   float:left;
   width: 200px; 
-  height:270px;
+  height:200px;
   position: absolute;
   margin-top:5px;
   z-index:99;
 }
 
 #navbar{
+  display:inline-block;
   width:25px;
   height:25px;
   text-align:center;
@@ -40,7 +41,8 @@ body{
 
 
   margin:10px;
-  margin-bottom:0;
+  margin-right:25%;
+
   padding:5px;
   background:#E8E9EB;
   border-radius:10px;
@@ -58,15 +60,13 @@ body{
 }
 
 h1{
-  display:block;
-  background:#373737;
+  display:inline-block;
   color:#E8E9EB;
   font-family:Calibri,"Times New Roma", sans-serif;
   text-align:center;
-  padding:10px;
   margin:0;
-  border-bottom:#ffffff solid 2px;
-
+  padding-top:10px;
+  vertical-align: top;
 }
 
 #navList{
@@ -106,9 +106,7 @@ h1{
   background:#05f5dd;
 }
 
-#navBarBackground{
-  display:none
-}
+
 
 
 main{
@@ -124,7 +122,6 @@ main:after{
 
 #bodyText{
   margin:auto;
-  margin-top:60px;
   position:relative;
   width:100%;
   background-position: 50% 100%;
@@ -153,7 +150,7 @@ figure figcaption {
     margin-top:5px;
 }
 
-#bodyText  div{
+#bodyText div:not(.UC,.MS, .st){
   margin-left:2%;
   margin-right:2%;
 
@@ -164,13 +161,58 @@ figure figcaption {
 
 }
 
-
-#aboutimg img{
-  width:80%;
-  text-align:center;
+.contact{
+  font-size:40px;
+  color:#505050;
+  height:40px;
+  transform: translate(0, 5px);
+  margin-right:20px;
 }
 
+#title{
+  font-size:24pt;
+  text-align:center;
+  margin:0;
+}
+#contactline{
+  font-size:12.5pt;
+  text-align:center;
+  margin:0;
+}
+.subtitle{
+  font-size:14pt;
+  margin:0;
+}
+hr{
+  margin-top:0;
+}
+.st{
+  margin-left:0;
+}
+.MS{
+  margin-left:0;
+  font-size: 14pt;
+  display:inline-block;
+  width:5%;
+  vertical-align: top;
+}
+.UC{
+  margin-left:0;
+  display:inline-block;
+  width:90%;
+}
+.st span{
+  font-size: 14pt;
+}
+.st p{
+  font-size:12pt;
+  margin:0;
+}
 
+.date{
+  display:block;
+  text-align: right;
+}
 
 
 
@@ -193,14 +235,17 @@ footer p{
   width:80%;
   margin:auto;
   padding-top:10px;
-  padding-bottom:10px;
+
 }
 
-footer img{
+footer i{
   width:50px;
   background:white;
+  color:black;
   margin-left:20px;
   margin-right:20px;
+  padding-top:5px;
+  padding-bottom:5px;
 }
 
 
@@ -220,17 +265,16 @@ footer img{
 
 #navList li {
   display:inline-block;
-  float:left;
+  float:right;
   color:#E8E9EB;
   background:#373737;
-  padding-left:10px;
-  padding-right:10px;
+  padding-left:13px;
+  padding-right:13px;
   font-family:Calibri,"Times New Roma", sans-serif;
   text-align: center;
-  line-height:55px;
+  line-height:60px;
   font-size:100%;
-  border-left:1px solid white;
-  border-right:1px solid white;
+  border-left:2px solid white;
 }
 
 #navList a{
@@ -240,10 +284,10 @@ footer img{
   opacity:1;
 }
 
-#navBarBackground{
-  display:block;
-  height:55px;
-  background:#373737;
+h1{
+  float:left;
+  margin-left:30px;
+  margin-right:0;
 }
 
 #bodyText{
@@ -261,8 +305,14 @@ figure{
   display:inline-block;
   width:40%;
   margin:0;
+  padding-top:50px;
 }
 
+.date{
+  display:inline-block;
+  float:right;
+
+}
 
 
 

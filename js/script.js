@@ -5,10 +5,10 @@ function keepheader(){
 	var sticky = header.offsetTop;
 	if(window.pageYOffset>sticky+10){
 		header.classList.add("sticky");
-		document.getElementById('h1').style.display='none';
+
 	}else{
 		header.classList.remove("sticky");
-		document.getElementById('h1').style.display='block';
+
 	}
 }
 

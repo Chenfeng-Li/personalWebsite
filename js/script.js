@@ -10,6 +10,12 @@ function keepheader(){
 		header.classList.remove("sticky");
 
 	}
+
+	if(countNavclick%2==1){
+		countNavclick++;
+		document.getElementById('navList').style.display="none";
+		document.getElementById('mobileNavBar').style.cssText = "display:none;background:none;box-shadow: none";
+	}
 }
 
 
@@ -24,6 +30,9 @@ function clicknav(){
 		document.getElementById('mobileNavBar').style.cssText = "display:none;background:none;box-shadow: none";
 	}
 }
+
+
+
 
 function consistentSize(){
 	if (window.innerWidth>=700){

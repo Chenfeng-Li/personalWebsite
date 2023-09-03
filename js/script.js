@@ -18,7 +18,7 @@ function clicknav(){
 	countNavclick++;
 	if(countNavclick%2==1){
 		document.getElementById('navList').style.display="block";
-		document.getElementById('mobileNavBar').style.cssText = "display:block;background:#02c4b1;box-shadow: 5px 5px 5px #aaaaaa;";
+		document.getElementById('mobileNavBar').style.cssText = "display:block;background:#02c4b1;box-shadow: 1vw 1vw 1vw #aaaaaa;";
 	}else{
 		document.getElementById('navList').style.display="none";
 		document.getElementById('mobileNavBar').style.cssText = "display:none;background:none;box-shadow: none";

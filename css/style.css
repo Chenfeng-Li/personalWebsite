@@ -1,6 +1,3 @@
-
-
-
 body{
   height: 100%;
   width: 100%;
@@ -17,7 +14,7 @@ body{
 #header{
   background:#373737;
   width:100%;
-  height:60px;
+  height:10vh;
   z-index:100;
 
 }
@@ -25,36 +22,31 @@ body{
 #mobileNavBar{
   display:none;
   float:left;
-  width: 200px; 
-  height:200px;
+  width: 40vw; 
+  height:30vh;
   position: absolute;
-  margin-top:5px;
+  margin-top:0;
   z-index:99;
 }
 
 #navbar{
   display:inline-block;
-  width:25px;
-  height:25px;
+  width:3vh;
+  height:3vh;
   text-align:center;
-  line-height:25px;
+  line-height:3vh;
+  font-size:2.5vh;
 
 
-  margin:10px;
-  margin-right:25%;
-
-  padding:5px;
+  margin:2.5vh;
+  padding:1vh;
   background:#E8E9EB;
   border-radius:10px;
-  border:#000000 solid 2px;
 
 }
 
 #navbar:hover{
   background:#02c4b1;
-  width:29px;
-  height:29px;
-  line-height:29px;
   color:#ffffff;
   border:none;
 }
@@ -64,15 +56,14 @@ h1{
   color:#E8E9EB;
   font-family:Calibri,"Times New Roma", sans-serif;
   text-align:center;
-  margin:0;
-  padding-top:10px;
+  margin:.5vh;
+  margin-left:20vw;
+  font-size: 5vh;
+  padding-top:1.5vh;
   vertical-align: top;
 }
 
 #navList{
-  display:none;
-  position:absolute;
-  width:360px;
   list-style-type: none;
   margin:0;
   padding:0;
@@ -80,26 +71,20 @@ h1{
 
 #navList a{
   display:block;
-  width:190px;
+  width:38vw;
   text-decoration:none;
   color:#ffffff;
   font-family:Calibri,"Times New Roma", sans-serif;
-  font-size:25px;
-  border-bottom: 2px white solid;
-  padding-top:10px;
-  padding-bottom:10px;
-  padding-left:10px;
+  font-size:3.5vh;
+  border-bottom: .4vh white solid;
+  padding:1.5vh;
+  padding-right:0;
 }
-
-
-
-
 
 #navList .active{
   display:block;
   background:#05f5dd;
   font-weight: bold;
-  opacity:1;
 }
 
 #navList a:hover{
@@ -223,7 +208,7 @@ hr{
 footer{
   color:#E8E9EB;;
   background:#373737;
-  height: 150px;
+  height: 20vh;
   text-align:center;
 
   clear: both;
@@ -234,18 +219,18 @@ footer{
 footer p{
   width:80%;
   margin:auto;
-  padding-top:10px;
+  padding-top:2vh;
 
 }
 
 footer i{
-  width:50px;
+  width:8vh;
   background:white;
   color:black;
-  margin-left:20px;
-  margin-right:20px;
-  padding-top:5px;
-  padding-bottom:5px;
+  margin-left:2vh;
+  margin-right:2vh;
+  padding-top:1vh;
+  padding-bottom:1vh;
 }
 
 
@@ -262,6 +247,9 @@ footer i{
   all:unset;
 }
 
+#header{
+  height:60px;
+}
 
 #navList li {
   display:inline-block;
@@ -273,7 +261,7 @@ footer i{
   font-family:Calibri,"Times New Roma", sans-serif;
   text-align: center;
   line-height:60px;
-  font-size:100%;
+  font-size:110%;
   border-left:2px solid white;
 }
 

@@ -21,16 +21,17 @@ body{
 
 #mobileNavBar{
   display:none;
+
   float:left;
   width: 40vw; 
   height:30vh;
   position: absolute;
-  margin-top:0;
+  margin-top:10vh;
   z-index:99;
 }
 
 #navbar{
-  display:inline-block;
+  position:absolute;
   width:3vh;
   height:3vh;
   text-align:center;
@@ -51,13 +52,14 @@ body{
   border:none;
 }
 
+header a{
+  text-decoration: none;
+}
 h1{
-  display:inline-block;
   color:#E8E9EB;
   font-family:Calibri,"Times New Roma", sans-serif;
   text-align:center;
   margin:.5vh;
-  margin-left:20vw;
   font-size: 5vh;
   padding-top:1.5vh;
   vertical-align: top;
@@ -210,6 +212,7 @@ footer{
   background:#373737;
   height: 20vh;
   text-align:center;
+  font-size:3vh;
 
   clear: both;
   position: relative;
@@ -277,7 +280,7 @@ h1{
   font-size:35px;
   margin-left:30px;
   margin-right:0;
-  padding-top:7px;
+  padding-top:5px;
 }
 
 #bodyText{

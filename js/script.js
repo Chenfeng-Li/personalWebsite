@@ -48,3 +48,8 @@ function consistentSize(){
 }
 
 window.onresize = consistentSize;
+
+function resizePDF(object){
+	console.log(object.contentWindow.document.documentElement.scrollHeight);
+	object.style.height=object.contentWindow.document.documentElement.scrollHeight + 'px';
+}

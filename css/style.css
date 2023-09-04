@@ -140,7 +140,11 @@ figure figcaption {
     margin-top:5px;
 }
 
-#bodyText div:not(.UC,.MS, .st){
+#bodyText{
+  font-size:18px;
+}
+
+#bodyText div{
   margin-left:2%;
   margin-right:2%;
 
@@ -148,7 +152,6 @@ figure figcaption {
 
 #bodyText > div{
   padding-top:10px;
-
 }
 
 .contact{

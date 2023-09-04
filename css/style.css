@@ -167,7 +167,7 @@ figure figcaption {
 }
 
 
-iframe{
+iframe,object{
   width:90vw;
   height:117vw;
   margin-top:2vh;
@@ -277,7 +277,7 @@ figure{
   margin:0;
 }
 
-iframe{
+iframe, object{
   width:77vw;
   margin-left:1.5vw;
   height:100vw;

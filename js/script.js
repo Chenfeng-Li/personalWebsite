@@ -1,4 +1,22 @@
+window.onscroll=keepheader;
 
+function keepheader(){
+	var header=document.getElementById('header');
+	var sticky = header.offsetTop;
+	if(window.pageYOffset>sticky+10){
+		header.classList.add("sticky");
+
+	}else{
+		header.classList.remove("sticky");
+
+	}
+
+	if(countNavclick%2==1){
+		countNavclick++;
+		document.getElementById('navList').style.display="none";
+		document.getElementById('mobileNavBar').style.cssText = "display:none;background:none;box-shadow: none";
+	}
+}
 
 
 var countNavclick=0

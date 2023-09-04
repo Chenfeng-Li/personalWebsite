@@ -167,13 +167,18 @@ figure figcaption {
 }
 
 
-iframe,object{
+object{
   width:90vw;
   height:117vw;
   margin-top:2vh;
   margin-left:5vw;
   margin-bottom:2vh;
 }
+iframe{
+  width:90vw;
+  height:117vw;
+}
+
 
 
 
@@ -277,9 +282,13 @@ figure{
   margin:0;
 }
 
-iframe, object{
+object{
   width:77vw;
   margin-left:1.5vw;
+  height:100vw;
+}
+iframe{
+  width:77vw;
   height:100vw;
 }
 

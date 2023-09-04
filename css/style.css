@@ -14,7 +14,7 @@ body{
 #header{
   background:#373737;
   width:100%;
-  height:10vh;
+  height:8vh;
   z-index:100;
 
 }
@@ -26,20 +26,19 @@ body{
   width: 40vw; 
   height:30vh;
   position: absolute;
-  margin-top:10vh;
+  margin-top:8vh;
   z-index:99;
 }
 
 #navbar{
   position:absolute;
-  width:3vh;
-  height:3vh;
+  width:2vh;
+  height:2vh;
   text-align:center;
-  line-height:3vh;
-  font-size:2.5vh;
+  line-height:2vh;
+  font-size:2vh;
 
-
-  margin:2.5vh;
+  margin:2vh;
   padding:1vh;
   background:#E8E9EB;
   border-radius:1vh;
@@ -60,8 +59,8 @@ h1{
   font-family:Calibri,"Times New Roma", sans-serif;
   text-align:center;
   margin:.5vh;
-  font-size: 5vh;
-  padding-top:1.5vh;
+  font-size: 4.5vh;
+  padding-top:1vh;
   vertical-align: top;
 }
 
@@ -73,23 +72,25 @@ h1{
 
 #navList a{
   display:block;
-  width:38vw;
+  width:40vw;
   text-decoration:none;
   color:#ffffff;
   font-family:Calibri,"Times New Roma", sans-serif;
   font-size:3.5vh;
+  padding-top:1.5vh;
+  padding-bottom:1.5vh;
+  padding-left:2vh;
+}
+#navList li{
   border-bottom: .4vh white solid;
-  padding:1.5vh;
-  padding-right:0;
 }
 
-#navList .active{
-  display:block;
+li:has(> a.active){
   background:#05f5dd;
   font-weight: bold;
 }
 
-#navList a:hover{
+#navList li:hover{
   background:#05f5dd;
 }
 
@@ -127,6 +128,8 @@ figure {
     display: inline-block;
     text-align:center;
     max-width:80%;
+    margin:0;
+    margin-left:10%;
 }
 figure img{
     vertical-align: top;
@@ -156,51 +159,14 @@ figure figcaption {
   margin-right:20px;
 }
 
-#title{
-  font-size:24pt;
-  text-align:center;
-  margin:0;
-}
-#contactline{
-  font-size:12.5pt;
-  text-align:center;
-  margin:0;
-}
-.subtitle{
-  font-size:14pt;
-  margin:0;
-}
-hr{
-  margin-top:0;
-}
-.st{
-  margin-left:0;
-}
-.MS{
-  margin-left:0;
-  font-size: 14pt;
-  display:inline-block;
-  width:5%;
-  vertical-align: top;
-}
-.UC{
-  margin-left:0;
-  display:inline-block;
-  width:90%;
-}
-.st span{
-  font-size: 14pt;
-}
-.st p{
-  font-size:12pt;
-  margin:0;
-}
 
-.date{
-  display:block;
-  text-align: right;
+iframe{
+  width:90vw;
+  height:117vw;
+  margin-top:2vh;
+  margin-left:5vw;
+  margin-bottom:2vh;
 }
-
 
 
 
@@ -208,30 +174,27 @@ hr{
 
 
 footer{
-  color:#E8E9EB;;
+  color:#E8E9EB;
   background:#373737;
   height: 20vh;
   text-align:center;
-  font-size:3vh;
-
   clear: both;
   position: relative;
   margin-top: -100px;
 }
 
 footer p{
-  width:80%;
+  font-size:min(3vw,2vh);
   margin:auto;
   padding-top:2vh;
-
 }
 
 footer i{
-  width:8vh;
-  background:white;
-  color:black;
-  margin-left:2vh;
-  margin-right:2vh;
+  font-size:min(10vw,5vh);
+  background:#373737;
+  color:#E8E9EB;
+  margin-left:2.5vw;
+  margin-right:2.5vw;
   padding-top:1vh;
   padding-bottom:1vh;
 }
@@ -239,26 +202,30 @@ footer i{
 
 @media screen and (min-width:1000px){
 
-#mobileNavBar, #navbar, #navbar:hover,#navLis,#navList a, #navList .active, #navList a:hover{
+#mobileNavBar, #navList,#navList a, #navList li:hover,li:has(> a.active){
   all:unset;
 }
 
 #navbar{
   display: none;
 }
-#navList, #navList a, #navList .active,#navList a:hover{
-  all:unset;
-}
+
 
 #header{
   height:60px;
 }
 
-#navList li {
-  display:inline-block;
+#navList{
+  display:flex;
   float:right;
+  list-style-type: none;
+
+}
+#navList a{
+  display:block;
   color:#E8E9EB;
   background:#373737;
+  height:60px;
   padding-left:13px;
   padding-right:13px;
   font-family:Calibri,"Times New Roma", sans-serif;
@@ -268,11 +235,14 @@ footer i{
   border-left:2px solid white;
 }
 
-#navList a{
-  opacity:.7;
-}
 #navList .active{
-  opacity:1;
+  background:#505050;
+  color:#ffffff;
+  font-weight: bold;
+
+}
+#navList a:hover{
+  background:#505050;
 }
 
 h1{
@@ -298,14 +268,18 @@ figure{
   display:inline-block;
   width:40%;
   margin:0;
-  padding-top:50px;
 }
 
-.date{
-  display:inline-block;
-  float:right;
-
+iframe{
+  width:77vw;
+  margin-left:1.5vw;
+  height:100vw;
 }
+
+footer i{
+  font-size:30px;
+}
+
 
 
 

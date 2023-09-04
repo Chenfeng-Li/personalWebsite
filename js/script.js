@@ -36,13 +36,15 @@ function clicknav(){
 
 function consistentSize(){
 	if (window.innerWidth>=700){
-		document.getElementById('navList').style.display="block";
-		document.getElementById('mobileNavBar').style.cssText = "background:none;box-shadow: none";
+		document.getElementById('navList').style.display="flex";
 	}
 	else{
 		document.getElementById('navList').style.display="none";
-		document.getElementById('mobileNavBar').style.cssText = "background:none;box-shadow: none";
 	}
+	document.getElementById('mobileNavBar').style.cssText = "background:none;box-shadow: none";
+    if(countNavclick%2==1){
+    	countNavclick++;
+    }
 }
 
 window.onresize = consistentSize;

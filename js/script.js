@@ -49,7 +49,17 @@ function consistentSize(){
 
 window.onresize = consistentSize;
 
-function resizePDF(object){
-	console.log(object.contentWindow.document.documentElement.scrollHeight);
-	object.style.height=object.contentWindow.document.documentElement.scrollHeight + 'px';
+
+function resizeIFrameToFitContent( iFrame ) {
+    iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+    iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
 }
+
+window.addEventListener('DOMContentLoaded', function(e) {
+    var iFrame = document.getElementById('resume');
+    resizeIFrameToFitContent( iFrame );
+    var iframes = document.querySelectorAll("iframe");
+    for( var i = 0; i < iframes.length; i++) {
+        resizeIFrameToFitContent( iframes[i] );
+    }
+} );

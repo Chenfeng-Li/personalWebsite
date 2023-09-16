@@ -4,12 +4,14 @@
     <head>
         <meta charset='UTF-8'>
         <meta name = 'viewport' content='width=device-width, initial-scale=1'>
-        <title>ChenfengLi's page</title>
-        <link rel="icon" type="image/x-icon" href="image/icon/favicon.ico">
-
+        <title>Research</title>
+        <link rel="icon" type="image/x-icon" href="image/icon/icon.png">
         <script src="https://kit.fontawesome.com/4dd2f70620.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href='css/style.css'>
         <script type="text/javascript" src="js/script.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
     </head>
 
@@ -26,11 +28,157 @@
                 </ul>
             </div>
             <div id="h1container"><a href='index.html'><h1 id="h1">Chenfeng LI</h1></a></div>
+        </header>
 
 
 
         <main>
         	<div id="bodyText">
+                <div>
+                    <h2>Research Portforlio</h2>
+                    <h3> Research Interests</h3>
+                    <h3> Research Experiences</h3>
+                </div>
+
+                <div>
+                    Menu
+                </div>
+
+
+               
+
+
+                <div class='researchitem' id='DRO'>
+                    <div>
+                        <h4> Robustness to Spurious Correlations via Distributionally Robust Optimization (DRO)</h4>
+                    </div>
+                    <div class='information'>
+                        <img src='image/research/DRO.jpg' class='large'>
+                        <ul>
+                            <li>
+                                Reference Information: 
+                                <p><a href="https://github.com/Chenfeng-Li/DRO" target='_blank'><i class="fa-brands fa-github"></i> Chenfeng-Li/DRO</a></p>
+                            </li>
+
+                            <li>
+                                Project Description: 
+                                <p>This is a teamwork of three.</p>
+                                <p>Review the theory of DRO.</p>
+                                <p>Construct a colored MNIST dataset with spurious correlation (which are different between training and testing set). Build ERM (empirical risk minimization) and DRO models with and without regularization, apply to the dataset and evaluate the performance of each model.</p>
+                                <p>Conclude the robustness of DRO model with strong regularization on the dataset and compile report.</p>
+                            </li>
+
+                            <li>
+                                My Position: 
+                                <p> Project Leader</p>
+                            </li>
+
+                            <li>
+                                My responsibility: 
+                                <p>Grouped the team, communicated with members and organized tasks.</p>
+                                <p>Constructed the colored MNIST dataset. Wrote DRO models and apply to the dataset. Made comparison between DRO model with or without regularization and drew conclusion. </p>
+                            </li>
+                            <li>
+                                Details: 
+                                <button id='showDRO' onclick="view('DRO')"> View Details</button>
+                                <button id='hideDRO' class='detailitem' onclick="hide('DRO')"> Hide Details</button>
+                                <div id='DROdetail' class='detailitem'> 
+                                    <p>
+                                        For a supervised learning problem, with observed features \(X_1, \dots ,X_n\) and corresponding target \(Y\), we want to use the \(X\)'s that cause \(Y\) and avoid using those caused by \(Y\). We call the correlation between \(Y\) and \(X\)'s caused by \(Y\) as spurious correlations. The models with spurious correlation are possibly made wrong prediction.
+                                    </p>
+                                    <p>
+                                        The regular model (such as ERM) couldn't handle such problem, and we could consider DRO model. The idea of DRO is to grouped the data based on features, then minimize the risk of the wrost cases. We use colored MNIST dataset as an example.
+                                    </p>
+                                    <p>
+                                        MNIST is a dataset with images of hand-written digits and the corresponding numbers. For each image, label it as \(Y_i=0\) if the digits within 0-4 or \(Y_i=1\) if the digit within 5-9. Then colored the label 0 images with red and label 1 images green. For the training set, flip the color with probability 0.25, while for the testing set, flip the color with probability 0.8.
+                                    </p>
+                                    <p>
+                                        Under this setting, Image -> Digit -> Label \(Y\) -> Color, where "->" denotes causation, and Image and Color are observed features. The correlation between label and color are spurious. If applying ERM, the model would learn this relationship from training set, but as such causation in testing set are different, the testing performance is poor.
+                                    </p>
+                                    <p>
+                                        To apply the DRO model, we separate the dataset into four subgroups based on color (red or green) and label (0 or 1). Then train a model that minimize the risk of the group with highest risk. This effectively eliminate the influence of spurious correlation. Moreover, to avoid overfitting, we use DRO model regularization. This model have satisfying training and testing accuracy.<br>
+                                    </p>
+
+
+
+                                </div>
+                            </li>
+                        </ul>
+
+                        </p>
+                        <img src='image/research/DRO.jpg' class='small'>
+
+                    </div>
+                </div>
+                <br><hr><br>
+
+
+                <div class='researchitem' id='HDP'>
+                    <div>
+                        <h4> Hierarchical Dirichlet Process (HDP)</h4>
+                    </div>
+                    <div class='information'>
+                        <img src='image/research/HDP.jpg' class='large'>
+                        <ul>
+                            <li>
+                                Reference Information: 
+                                <p><a href="https://github.com/Chenfeng-Li/HDP" target='_blank'><i class="fa-brands fa-github"></i> Chenfeng-Li/HDP</a></p>
+                            </li>
+
+                            <li>
+                                Project Description: 
+                                <p>This is a given-topic final research of a Bayesian course. I worked at the stat team of eight.</p>
+                                <p>Review the theory of HDP, Chinese Restaurant Franchise (CRF) and Slice Sampler (SS). Implement CRF sampling method for a classification problem.</p>
+                                <p>Construct a HDP model and implement SS for the same problem. Make comparison with the result of CRF method.</p>
+                                <p>Make presentation and compile report.</p>
+
+                            </li>
+
+                            <li>
+                                My Position: 
+                                <p> Researcher</p>
+                            </li>
+
+                            <li>
+                                My responsibility: 
+                                <p>Constructed graphical model of HDP and made mathematical deduction for coding.</p>
+                                <p>Helped to encode the model.</p>
+                                
+                            </li>
+                            <li>
+                                Details: 
+                                <button id='showHDP' onclick="view('HDP')"> View Details</button>
+                                <button id='hideHDP' class='detailitem' onclick="hide('HDP')"> Hide Details</button>
+                                <div id='HDPdetail' class='detailitem'> 
+                                    <p>
+                                        Slice sampler (SS): For a probability distribution \(f(x)\) with two or more peaks, and small function value in between, some sampling method (such as Metropolis–Hastings algorithm) may keep sampling values around one peak and ignore the others. Slice sampler is available for this situation. SS is an MCMC algorithm. For an initial \(x_0\), it first uniformly sample a value between 0 and \(f(x_0)\), then uniformly sample \(x_1\) from \(\{x|f(x)>f(x_0)\}\), and repeat this process.
+                                    </p>
+                                    <p>
+                                        Chinese Restaurant Franchise (CRF): This is a generalization of Chinese Restaurant Process (CRP). In CRP each step choose either one of existing parameters or sample a new parameter. In CRF, it assumes an amount of Chinese restaurants sharing same distribution of parameter.
+                                    </p>
+                                    <p>
+                                        Hierarchical Dirichlet Process (HDP): This is a expansion of Dirichlet Process (DP), which is an nonparametric Bayesian. In HDP, we set a prior distribution for the base distribution of DP to reflect its variation. Therefore, HDP is more flexible than DP but more computational expensive.
+                                    </p>
+                                    <p>
+                                        In this research, for the classification problem from the same given dataset, the performance of CRF is better than the HDP with SS.
+                                    </p>
+
+
+
+                                </div>
+                            </li>
+                        </ul>
+
+                        </p>
+                        <img src='image/research/HDP.jpg' class='small'>
+
+                    </div>
+                    <br><hr><br>
+
+
+
+
+
 
                 
 

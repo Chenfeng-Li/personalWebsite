@@ -179,11 +179,46 @@ iframe{
   height:117vw;
 }
 
+.small{
+  display:block;
+  width:80%;
+  margin:auto;
+}
 
+.large{
+  display:none;
+}
 
+button {
+  font-size: 16px;
+}
 
+.detailitem{
+  display:none;
+}
 
+h4{
+  margin-top:0;
+  margin-bottom: .75em;
+}
+.information ul{
+  margin:0;
+}
+.information li{
+  margin-bottom:0.5em;
+}
+.information p{
+  margin:0;
+  margin-top:.5em;
+  margin-left:.5em;
+}
+.detailitem p{
+  margin-left:0;
+}
 
+hr{
+  width:96%;
+}
 
 footer{
   color:#E8E9EB;
@@ -291,6 +326,20 @@ iframe{
   width:77vw;
   height:100vw;
 }
+
+.large{
+  display:block;
+  width:50%;
+  float:right;
+}
+
+.small{
+  display:none;
+}
+
+
+
+
 
 footer i{
   font-size:30px;

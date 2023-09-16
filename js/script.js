@@ -32,7 +32,16 @@ function clicknav(){
 }
 
 
-
+function view(id){
+	document.getElementById(id+'detail').style.display='block';
+	document.getElementById('hide'+id).style.display='inline';
+	document.getElementById('show'+id).style.display='none';
+}
+function hide(id){
+	document.getElementById(id+'detail').style.display='none';
+	document.getElementById('hide'+id).style.display='none';
+	document.getElementById('show'+id).style.display='inline';
+}
 
 function consistentSize(){
 	if (window.innerWidth>=700){

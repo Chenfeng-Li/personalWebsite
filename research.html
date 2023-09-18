@@ -37,12 +37,24 @@
                 <div>
                     <h2>Research Portforlio</h2>
                     <h3> Research Interests</h3>
+                    <div>
+                        I'm interesting in data science and machine learning. Currently I focus on image processing and graphical model. I'm also interesting in Bayesian statistics. <br>
+                        With my background in Mathematics and Statistics, I believe I am capable of performing a variety of relevant tasks.
+                    </div>
                     <h3> Research Experiences</h3>
                 </div>
 
-                <div>
-                    Menu
-                </div>
+                <section id='menu'>
+                    <b>Menu</b>
+                    <ul>
+                        <li><a href='#DRO'>Robustness to Spurious Correlations via Distributionally Robust Optimization (DRO)</a></li>
+                        <li><a href='#HDP'>Hierarchical Dirichlet Process (HDP)</a></li>
+                        <li><a href='#consult'>Statistical Consulting</a></li>
+                        <li><a href='#cm'>The current situation and feasible development direction of Chinese medicine</a></li>
+                        <li><a href='#fr'>A General Review of Facial Recognition Technology </a></li>
+                    </ul>
+                </section>
+                <br><hr><br>
 
 
                
@@ -56,8 +68,10 @@
                         <img src='image/research/DRO.jpg' class='large'>
                         <ul>
                             <li>
-                                Reference Information: 
-                                <p><a href="https://github.com/Chenfeng-Li/DRO" target='_blank'><i class="fa-brands fa-github"></i> Chenfeng-Li/DRO</a></p>
+                                Period: Apr - May, 2023
+                            </li>
+                            <li>
+                                Reference Information: <a href="https://github.com/Chenfeng-Li/DRO" target='_blank'><i class="fa-brands fa-github"></i> Chenfeng-Li/DRO</a>
                             </li>
 
                             <li>
@@ -76,7 +90,7 @@
                             <li>
                                 My responsibility: 
                                 <p>Grouped the team, communicated with members and organized tasks.</p>
-                                <p>Constructed the colored MNIST dataset. Wrote DRO models and apply to the dataset. Made comparison between DRO model with or without regularization and drew conclusion. </p>
+                                <p>Constructed the colored MNIST dataset. Wrote DRO models and apply to the dataset. Made comparison between DRO model with or without regularization and drew conclusion. Evaluate the DRO model with the general case of spurious variables.</p>
                             </li>
                             <li>
                                 Details: 
@@ -96,7 +110,7 @@
                                         Under this setting, Image -> Digit -> Label \(Y\) -> Color, where "->" denotes causation, and Image and Color are observed features. The correlation between label and color are spurious. If applying ERM, the model would learn this relationship from training set, but as such causation in testing set are different, the testing performance is poor.
                                     </p>
                                     <p>
-                                        To apply the DRO model, we separate the dataset into four subgroups based on color (red or green) and label (0 or 1). Then train a model that minimize the risk of the group with highest risk. This effectively eliminate the influence of spurious correlation. Moreover, to avoid overfitting, we use DRO model regularization. This model have satisfying training and testing accuracy.<br>
+                                        To apply the DRO model, we separate the dataset into four subgroups based on color (red or green) and label (0 or 1). Then train a model that minimize the risk of the group with highest risk. This effectively eliminate the influence of spurious correlation. Moreover, to avoid overfitting, we use DRO model regularization. This model have satisfying training and testing accuracy.
                                     </p>
 
 
@@ -106,11 +120,12 @@
                         </ul>
 
                         </p>
+                        <br> 
                         <img src='image/research/DRO.jpg' class='small'>
 
                     </div>
                 </div>
-                <br><hr><br>
+                <hr><br>
 
 
                 <div class='researchitem' id='HDP'>
@@ -121,14 +136,16 @@
                         <img src='image/research/HDP.jpg' class='large'>
                         <ul>
                             <li>
-                                Reference Information: 
-                                <p><a href="https://github.com/Chenfeng-Li/HDP" target='_blank'><i class="fa-brands fa-github"></i> Chenfeng-Li/HDP</a></p>
+                                Period: Apr - May, 2023
+                            </li>
+                            <li>
+                                Reference Information: <a href="https://github.com/Chenfeng-Li/HDP" target='_blank'><i class="fa-brands fa-github"></i> Chenfeng-Li/HDP</a>
                             </li>
 
                             <li>
                                 Project Description: 
                                 <p>This is a given-topic final research of a Bayesian course. I worked at the stat team of eight.</p>
-                                <p>Review the theory of HDP, Chinese Restaurant Franchise (CRF) and Slice Sampler (SS). Implement CRF sampling method for a classification problem.</p>
+                                <p>Review the theory of HDP, Chinese Restaurant Franchise (CRF) and Slice Sampler (SS). Implement CRF sampling method for a clustering problem.</p>
                                 <p>Construct a HDP model and implement SS for the same problem. Make comparison with the result of CRF method.</p>
                                 <p>Make presentation and compile report.</p>
 
@@ -142,7 +159,7 @@
                             <li>
                                 My responsibility: 
                                 <p>Constructed graphical model of HDP and made mathematical deduction for coding.</p>
-                                <p>Helped to encode the model.</p>
+                                <p>Cooperatively encoded the model.</p>
                                 
                             </li>
                             <li>
@@ -160,7 +177,7 @@
                                         Hierarchical Dirichlet Process (HDP): This is a expansion of Dirichlet Process (DP), which is an nonparametric Bayesian. In HDP, we set a prior distribution for the base distribution of DP to reflect its variation. Therefore, HDP is more flexible than DP but more computational expensive.
                                     </p>
                                     <p>
-                                        In this research, for the classification problem from the same given dataset, the performance of CRF is better than the HDP with SS.
+                                        In this research, for the clustering problem from the same given dataset, the performance of CRF is better than the HDP with SS.
                                     </p>
 
 
@@ -170,27 +187,215 @@
                         </ul>
 
                         </p>
+                        <br> 
                         <img src='image/research/HDP.jpg' class='small'>
 
                     </div>
-                    <br><hr><br>
+                </div>
+                <hr><br>
+
+
+                <div class='researchitem' id='consult'>
+                    <div>
+                        <h4> Statistical Consulting </h4>
+                    </div>
+                    <div class='information'>
+                        <ul>
+                            <li>
+                                Period: Sep - Nov, 2022
+                            </li>
+                            <li>
+                                Reference Information: <a href="https://github.com/Chenfeng-Li/Consulting" target='_blank'><i class="fa-brands fa-github"></i> Chenfeng-Li/Consulting</a>
+                            </li>
+
+                            <li>
+                                Description: 
+                                <p>
+                                    Consulting team of five. Provided consulting services to local clients with data issues.
+                                </p>
+                                <p>
+                                    Review the materials from clients after receiving the consulting request. Meet with them online and discuss detailed concerning of the problem, and provide brief suggestion instantly.
+                                </p>
+                                <p>
+                                    Delivered the final reports to clients. Make presentations to instructors and other consulting teams.
+                                </p>
+                                <p>
+                                    Completed three consulting missions duriing the period.
+                                </p>
+
+                            </li>
+
+                            <li>
+                                My Position: 
+                                <p> Consultant </p>
+                            </li>
+
+                            <li>
+                                My responsibility: 
+                                <p>Participate in the whole consulting process.</p>
+                                
+                            </li>
+                            <li>
+                                Details: 
+                                <button id='showconsult' onclick="view('consult')"> View Details</button>
+                                <button id='hideconsult' class='detailitem' onclick="hide('consult')"> Hide Details</button>
+                                <div id='consultdetail' class='detailitem'> 
+                                    <p>
+                                        First client is Mr. Kwang from UChicago Medicine. This client wanted to study the effect of a medication for COVID patients on the requirement of ventilation. We advised to apply logistic regression, and provided suggestions on grouping the patients and strengthen the analysis result.
+                                    </p>
+                                    <p>
+                                        Second client is Ms. Wang from UChicago BSD. This client wanted to study the effect of HCBS (a kind of health-care service) on Post-Acute Care (PAC) based on a dataset with 700,000 observations, and she was interested in using fixed effects (FE) with propensity scores (PS) weighting in the model. We suggested to use logistic regression model without PS weighting.
+                                    </p>
+                                    <p>
+                                        Third client is Ms. Gan from UChicago Medicine. This client wanted to learn if the distance between the middle point of the chest and left entricle is significant accross different age group and other physical factors. We pointed out an issue of the covariate choice (BMI should not be included as it is a function of weight and height), advised linear regression model and provided the number of samples should be collected.
+                                    </p>
+
+
+                                </div>
+                            </li>
+                        </ul>
+                        <br>
+                    </div>
+                </div>
+                <hr><br>
+
+                <div class='researchitem' id='cm'>
+                    <div>
+                        <h4> The current situation and feasible development direction of Chinese medicine </h4>
+                    </div>
+                    <div class='information'>
+                        <img src='image/research/chinese_medicine.jpg' class='large'>
+                        <ul>
+                            <li>
+                                Period: Jun - Dec, 2021
+                            </li>
+                            <li>
+                                Reference Information: <a href="https://github.com/Chenfeng-Li/Chinese-medicine" target='_blank'><i class="fa-brands fa-github"></i> Chenfeng-Li/Chinese-medicine</a>
+                            </li>
+
+                            <li>
+                                Description: 
+                                <p>
+                                    Teamwork of four for the capstone project at the Chung Chi College, CUHK. The language of this research is Chinese (traditional).
+                                </p>
+                                <p>
+                                    This research is to study the situation and problems encountered of the Chinese medicine, and raise suggestions for its development.
+                                </p>
+                                <p>
+                                    The research process included reviewing relevant papers, interviewing specialists and practitioners, collecting and analyzing the public preception through questionaires, and further discussion about development. Then we compiled reports and made presentation.
+                                </p>
+
+                            </li>
+
+                            <li>
+                                My Position: 
+                                <p> Data Analyst </p>
+                            </li>
+
+                            <li>
+                                My major responsibility: 
+                                <p>
+                                    Review the research related to public preception about Chinese medicine.
+                                </p>
+                                <p>
+                                    Design and distribute online and paper-based questionaire. Process regression analyze and visualize by charts. Draw analysis conclusion and make reflection.
+                                </p>
+                                
+                            </li>
+                            <li>
+                                Details: 
+                                <button id='showcm' onclick="view('cm')"> View Details</button>
+                                <button id='hidecm' class='detailitem' onclick="hide('cm')"> Hide Details</button>
+                                <div id='cmdetail' class='detailitem'> 
+                                    <p>
+                                        In general, we analyzed the medical, econimical and cultural value of Chinese medicine and concluded that it is worth developing. According to the data result we noticed that the public have positive view in Chinese medicine. However, the Chinese medicine faces many issues, such as non-scientific theory, treatment effectiveness, qualify of products and lack of talent. We raised suggestions such as pharmacological analysis, patent protection, commercialization.
+                                    </p>
+                                    <p>
+                                        In data analysis part, I wanted to study the effect of ages and education level on the idea of Chinese medicine (overall, theory, effectiveness and choice), and the perception of some specific symptoms, the advantages and shortages of Chinese medicine. Therefore, I designed a questionaire with 10 questions (required 1-2 minutes to finish), and distributed online and on-site with the help of teammates.
+                                    </p>
+                                    <p>
+                                        We collected 153 valid answers. I used linear regression on the first problem. As the ages and education level were ordinal categorical variables, and to analyze the difference between each two neighbor categories, I encoded with staircase dummy variables. The result showed that generally, the age had positive effect ,and education level had weak negative effect on perception. Besides, I found people thought Chinese medicine is more effective in treating minor and chronic diseases.
+                                    </p>
+                                    <p>
+                                        The limitation in this analysis is that the sample size is small, especially for the elderly group, and many people rejected to answer, which may cause bias on result. Besides, we can choose more covariates (such as income level).
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <br>
+                        <img src='image/research/chinese_medicine.jpg' class='small'>
+                    </div>
+                </div>
+                <hr><br>
+
+                <div class='researchitem' id='fr'>
+                    <div>
+                        <h4> A General Review of Facial Recognition Technology </h4>
+                    </div>
+                    <div class='information'>
+                        <img src='image/research/facial_recognition.jpg' class='large'>
+                        <ul>
+                            <li>
+                                Period: Sep - Dec, 2020
+                            </li>
+                            <li>
+                                Reference Information: <a href="https://github.com/Chenfeng-Li/Facial-Recognition" target='_blank'><i class="fa-brands fa-github"></i> Chenfeng-Li/Facial-Recognition</a>
+                            </li>
+
+                            <li>
+                                My Position: 
+                                <p> Independent Researcher </p>
+                            </li>
+
+                            <li>
+                                Description: 
+                                <p>
+                                    This is an independent project.
+                                </p>
+                                <p>
+                                    Review the theories and applications of several facial detection and recognition methods proposed in the past decades.
+                                </p>
+                                <p> 
+                                    Implement a facial recognition model through Convolution Neural Network (CNN).
+
+                            </li>
+
+
+                                
+                            </li>
+                            <li>
+                                Details: 
+                                <button id='showfr' onclick="view('fr')"> View Details</button>
+                                <button id='hidefr' class='detailitem' onclick="hide('fr')"> Hide Details</button>
+                                <div id='frdetail' class='detailitem'> 
+                                    <p>
+                                        This is my first research project, when I was new on machine learning.
+                                    </p>
+                                    <p>
+                                        I divided the review part into two, detection and recognition. In detection part I provided some personal thinking and reviewed Viola-Jones Algorithm, CNN and Multi-task Cascade Convolutional Network. In recognition part I reviewed Eigenface and CNN.
+                                    </p>
+                                    <p>
+                                        In the inplementation part I chose a dataset with 2,749 face images (of size 62*47) from 52 individuals from Sklearn (fetch_lfw_people with 20 minimum faces), and then constructed a CNN model through tensorflow. Split the data with training, validation and testing sets at a ratio 8:1:1. Achieve a testing accuracy of 91.7%.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <br>
+                        <img src='image/research/facial_recognition.jpg' class='small'>
+                        <br>
+                    </div>
+                </div>
 
 
 
 
 
 
-                
 
-
-
-
-
-
-
-
-        		
             </div>
+
 
 
 
@@ -198,7 +403,7 @@
 
 
         <footer>
-            <p id='update'>Last updated on Sep 4, 2023</p>
+            <p id='update'>Last updated on Sep 17, 2023</p>
             <p> &copy Chenfeng Li, 2023</p>
             <p>
                 <a href='mailto:cfli@uchicago.edu'><i class="fa-regular fa-envelope"></i></a>

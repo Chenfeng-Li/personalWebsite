@@ -220,6 +220,32 @@ hr{
   width:96%;
 }
 
+.researchitem{
+  scroll-margin-top: 16vh;
+}
+
+
+#menu{
+  width:80%;
+  border:1.5px black solid;
+  border-radius: 5px;
+  padding:10px;
+  margin-left:5%
+}
+#menu ul{
+  list-style-type: circle;
+
+}
+#menu li{
+  margin-bottom: 8px;
+}
+#menu a{
+  color:black;
+}
+
+
+
+
 footer{
   color:#E8E9EB;
   background:#373737;
@@ -331,11 +357,22 @@ iframe{
   display:block;
   width:50%;
   float:right;
+  margin-left:10px;
+  margin-bottom:10px;
 }
 
 .small{
   display:none;
 }
+
+.researchitem{
+  scroll-margin-top: 120px;
+}
+
+#menu{
+  width:50%;
+}
+
 
 
 

@@ -23,7 +23,7 @@ body{
   display:none;
 
   float:left;
-  width: 50vw; 
+  width: 200px; 
   height:30vh;
   position: absolute;
   margin-top:8vh;
@@ -46,7 +46,7 @@ body{
 }
 
 #navbar:hover{
-  background:#02c4b1;
+  background:#005f96;
   color:#ffffff;
   border:none;
 }
@@ -91,12 +91,12 @@ h1{
 }
 
 li:has(> a.active){
-  background:#05f5dd;
+  background:#048cdb;
   font-weight: bold;
 }
 
 #navList li:hover{
-  background:#05f5dd;
+  background:#048cdb;
 }
 
 
@@ -145,6 +145,7 @@ figure img{
 figure figcaption {
     text-align: center;
     margin-top:5px;
+
 }
 
 

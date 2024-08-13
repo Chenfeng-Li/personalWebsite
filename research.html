@@ -48,6 +48,7 @@
                 <section id='menu'>
                     <b>Menu</b>
                     <ul>
+                        <li><a href='#Thesis'>Examining the Interplay Between Politicians’ Facial Expressions in Media Images and News Corporation Bias</a></li>
                         <li><a href='#DRO'>Robustness to Spurious Correlations via Distributionally Robust Optimization (DRO)</a></li>
                         <li><a href='#HDP'>Hierarchical Dirichlet Process (HDP)</a></li>
                         <li><a href='#consult'>Statistical Consulting</a></li>
@@ -56,6 +57,165 @@
                     </ul>
                 </section>
                 <br><hr><br>
+
+
+
+                <div class='researchitem' id='Thesis'>
+                    <div>
+                        <h4> Examining the Interplay Between Politicians’ Facial Expressions in Media Images and News Corporation Bias</h4>
+                    </div>
+                    <div class='information'>
+                        <img src='image/research/thesis.jpg' class='large'>
+                        <ul>
+                            <li>
+                                Period: Sep 2023 - May 2024
+                            </li>
+                            <li>
+                                Reference Information: <a href="https://github.com/Chenfeng-Li/Politician-Image-Project" target='_blank'><i class="fa-brands fa-github"></i> Chenfeng-Li/Politician-Image-Project</a>
+                            </li>
+
+                            <li>
+                                Project Description: 
+                                <p>This is the thesis for the master degree at UChicago.</p>
+                                <p>Supervisor: <a href="https://stat.uchicago.edu/people/profile/aaron-schein/" target='_blank'>Prof. Aaron Schein</a></p>
+                                <p>In this research, we are interested in whether the news corporations in America tend to use the images of some influencial politicians with different facial expression based on the media bias.</p>
+                                <p>For example, if Donald Trump, the former republican presendent, is portrayed with a more hostile expression in progressive medias (e.g. CNN, Politico) as opposed to a more composed demeanor in conservative outlets (e.g. FoxNews, Washington).</p>
+                            </li>
+
+                            <li>
+                                My Position: 
+                                <p> Independent Researcher</p>
+                            </li>
+
+                            <li>
+                                My responsibility: 
+                                <p>I was provided an dataset with image URLs (fetched from media websites) and text (titles, captions, alternative texts) from eight American news media with different political bias. </p>
+                                <p>I created a system to recognize the faces from influencial politicians, extract their emotions information, and analyze and visualize the emotions from different news corporations. The basic idea is shown as the nearby picture, please check the Details session and Github repository if you are interested in.</p>
+                                <p>After complement of the analyze, I compiled a 10-page report in LaTeX and made presentation in front of the professors from Department of Statistcis.</p>
+                                
+                            </li>
+                            <li>
+                                Details: 
+                                <button id='showThesis' onclick="view('Thesis')"> View Details</button>
+                                <button id='hideThesis' class='detailitem' onclick="hide('Thesis')"> Hide Details</button>
+                                <div id='Thesisdetail' class='detailitem'> 
+                                    <p>
+                                        I'll briefly talk about the research methodologies and result in this session.
+                                    </p>
+                                    <p>
+                                        As mentioned above, the dataset contained images URLs (do not necessarily contain faces of politician) and corresponding texts. After cleaning the invalid and duplicate data, we obtain the source of each image from the second level domain of its url.
+                                    </p>
+                                    <p>
+                                        We made use of two pretrained open source model: <a href="https://github.com/timesler/facenet-pytorch" target='_blank'>FaceNet</a>, an robust facial detection and recognition model, and <a href="https://github.com/phamquiluan/ResidualMaskingNetwork" target='_blank'>RMN</a>, a facial expression recognition model. The methodologies contains the following three parts:
+                                    </p>
+                                    <p>
+                                        <ol>
+                                            <li>We need to build a name recognition model, which detects if there are faces and who they are for an input image. Therefore, we need a labelled dataset, containing images of politicians' faces and their names. Wikimedia is a proper dataset for this, as it contains some metapages of "21st politicians in United States", where the page of each politician contains a portrait as well as some relevant images of them. For each politician, We passed the portrait through FaceNet to get the "controlled embedding vector", and collected more faces with embedding vector closed to the controlled one. After this process we get the label dataset, then trained a KNN model with \(k=1\) as the name recognition model.</li>
+                                            <li>Then we could work on the media dataset. In this research, we worked on some influencial politicians. Use "Donald Trump" as an example. To increase the efficiency, we specified some prompts, in this example "Trump", and filtered the observations whose texts part contains the prompts. We passed thess images to the FaceNet to get the face crops and embedding vectors, and then passed the embedding vectors through the name recognition model. If some vectors predicted "Donald Trump", we stored the face crops for the next process.</li>
+                                            <li>For the rectangular face crops, we extended it as square, modified the grey scale, and passed the them through the RMN model to get the emotion logits, which are 7-dimensional vectors representing the combination of seven basic emotions. Then we can analyze these logits.</li>
+                                        </ol>
+                                    </p>
+                                        
+                                    <div><img src='image/research/emotions.png' style="width:80%; margin-left:10%"></div>
+
+                                    <p>
+                                        We then analyzed the emotion logits by categorizing them by the eight news corporations and/or the political bias (progressive or conservative). There are two solutions for this problem. The first and intuitive one is to visualize the logits. We implemented the UMAP to reduce the dimension of the logits to 2, and for each news corporation we created a scatter plots with different colour for each politicians. The plots
+                                    </p>
+                                    <p>
+                                        <ul>
+                                            <li>The first and intuitive one is to visualize the logits. We implemented the UMAP to reduce the dimension of the logits to 2, and for each politicians we created a scatter plots with different colour for different news corporations or media bias. The above are some examole plots. According to these plots, we could not distingished the emotions based on news corporations</li>
+                                            <li>However, the result after reducing the dimension may not be generalized. Therefore, we built some KNN classifier on the emotion logits with the same idea, and evaluate the models with validation accuracies and confusion matrixes. We found that these models are not necessarily better than the baseline models, which derived a same conclusion that the relationship between politicians' emotion and news corporations/media bias is not significant.</li>
+                                        </ul>
+                                    </p>
+                                    <p> 
+                                        In conclusion, our results indicated that there is no clear relationship between the facial expressions of specific politicians in media images and news corporations or their political bias. Some possible reasons are listed as follows:
+                                    </p>
+                                    <p>
+                                        <ul>
+                                            <li>Lack of Deliberate Selection of Facial Expressions by News Corporations, as it may have negative affect on long-term interest.</li>
+                                            <li>Limited Representation of Political Bias Across News Corporations. Eight news media may not be enough.</li>
+                                            <li>Inadequate Representation of Facial Expressions by Emotion Logits. The seven 7-dimensional emotion logits may not represent complex facial emotion well.</li>
+                                            <li>Same expression may have different meaning. An angry expression could be described as irritable and agitated, and in contrast passion and assertiveness.</li>
+                                            <li>The Impact of Timing on Photo Selection. The time of each image is not given, as the rating of a politicans for each media may change over time.</li>
+                                        </ul>
+                                    </p>
+
+
+
+
+                                </div>
+                            </li>
+                        </ul>
+
+                        </p>
+                        <br> 
+                        <img src='image/research/DRO.jpg' class='small'>
+
+                    </div>
+                </div>
+                <hr><br>
+
+
+
+                <div class='researchitem' id='LLM'>
+                    <div>
+                        <h4> Modified Attention with Non-Linear Kernels and its Impact on Few-Shot Learning</h4>
+                    </div>
+                    <div class='information'>
+                        <img src='image/research/LLM.png' class='large'>
+                        <ul>
+                            <li>
+                                Period: Oct - Dec, 2023
+                            </li>
+                            <li>
+                                Reference Information: <br>
+                                <a href="https://github.com/WilliamsJakeL/LLMProject" target='_blank'><i class="fa-brands fa-github"></i> WilliamsJakeL/LLMProject</a> (where I am an contributor)<br>
+                                <a href='file/LLM Poster.pdf' target='_blank'>Poster</a> at final seminar.
+                            </li>
+
+                            <li>
+                                Project Description: 
+                                <p>Collaborated within a three-fellows team. </p>
+                                <p>Trained GPT-2 models on nanoGPT using OpenWebText with replacing the dot product kernel in attention mechanism by Gaussian, polynomial and periodic kernels.</p>
+                                <p>Evaluated the models with MMLU, ARC and Translation tests. Determined that traditional dot product kernels performed best overall, with some non-linear kernels excelling in specific tests.</p>
+                                <p>Produced a poster, share results and communicated with other research teams and instructors at the final seminar.</p>
+
+                            </li>
+
+                            <li>
+                                My Position: 
+                                <p> Research Team Member </p>
+                            </li>
+
+                            <li>
+                                My responsibility: 
+                                <p>Review the background history of language model and the theories each attention kernels.</p>
+                                <p>Help with modified the attention kernel of nanoGPT model, as Gaussian, polynomial and periodic.</p>
+                                <p>After the four models with different kernels are trained, prepare the AI2 Reasoning Challenge (ARC) and implement the ARC test to evaluate the performance of each model.
+                            </li>
+                            <!--
+
+                            <li>
+                                Details: 
+                                <button id='showLLM' onclick="view('LLM')"> View Details</button>
+                                <button id='hideLLM' class='detailitem' onclick="hide('LLM')"> Hide Details</button>
+                                <div id='LLMdetail' class='detailitem'> 
+                                    <p>
+                                        Vacant, would add soon!
+                                    </p>
+                                </div>
+                            </li>
+
+                            -->
+                        </ul>
+
+                        </p>
+                        <br> 
+                        <img src='image/research/DRO.jpg' class='small'>
+
+                    </div>
+                </div>
+                <hr><br>
 
 
                

@@ -63,13 +63,13 @@ function changeresume(){
 		document.getElementById("resumehref").href='file/ChenfengResume.pdf';
 		document.getElementById("original").style.display='none';
 		document.getElementById("alternative").style.display='block';
-		document.getElementById("buttontext").innerHTML="View the original version or resume by clicking <button onclick='changeresume()'>this button</button>.";
+		document.getElementById("buttontext").innerHTML="View the original version resume by clicking <button onclick='changeresume()'>this button</button>.";
 	}
 	else{
 		document.getElementById("resumehref").href='file/ChenfengLiResume.pdf';
 		document.getElementById("original").style.display='block';
 		document.getElementById("alternative").style.display='none';
-		document.getElementById("buttontext").innerHTML="View the alternative version or resume by clicking <button onclick='changeresume()'>this button</button>.";
+		document.getElementById("buttontext").innerHTML="View the alternative version resume by clicking <button onclick='changeresume()'>this button</button>.";
 	}
 	isoriginal = !isoriginal
 }

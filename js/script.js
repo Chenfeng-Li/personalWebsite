@@ -59,25 +59,20 @@ function consistentSize(){
 
 var isoriginal=true;
 function changeresume(){
-	parentblock = document.getElementById("bodyText")
-	var newEmbed = document.createElement("embed");
 	if(isoriginal){
 		document.getElementById("resumehref").href='file/ChenfengResume.pdf';
-		parentblock.removeChild(document.getElementById("original"))
-		newEmbed.setAttribute("src", "file/ChenfengResume.pdf");
-		newEmbed.setAttribute("id", "alternative");
+		document.getElementById("original").style.display='none';
+		document.getElementById("alternative").style.display='block';
+		document.getElementById("buttontext").innerHTML="View the original version or resume by clicking <button onclick='changeresume()'>this button</button>.";
 	}
 	else{
 		document.getElementById("resumehref").href='file/ChenfengLiResume.pdf';
-		parentblock.removeChild(document.getElementById("alternative"))
-		newEmbed.setAttribute("src", "file/ChenfengLiResume.pdf");
-		newEmbed.setAttribute("id", "original");
+		document.getElementById("original").style.display='block';
+		document.getElementById("alternative").style.display='none';
+		document.getElementById("buttontext").innerHTML="View the alternative version or resume by clicking <button onclick='changeresume()'>this button</button>.";
 	}
-	newEmbed.setAttribute("type", "application/pdf");
-	parentblock.appendChild(newEmbed)
 	isoriginal = !isoriginal
 }
-
 
 
 window.onresize = consistentSize;

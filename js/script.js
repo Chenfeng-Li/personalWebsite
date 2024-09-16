@@ -19,7 +19,7 @@ function keepheader(){
 }
 
 
-var countNavclick=0
+var countNavclick=0;
 function clicknav(){
 	countNavclick++;
 	if(countNavclick%2==1){
@@ -55,6 +55,21 @@ function consistentSize(){
     	countNavclick++;
     }
 }
+
+
+var isoriginal=true;
+function changeresume(){
+	if(isoriginal){
+		document.getElementById("resumehref").href='file/ChenfengResume.pdf';
+		document.getElementById("embedresume").src='file/ChenfengResume.pdf';
+	}
+	else{
+		document.getElementById("resumehref").href='file/ChenfengLiResume.pdf';
+		document.getElementById("embedresume").src='file/ChenfengLiResume.pdf';
+	}
+	isoriginal = !isoriginal
+}
+
 
 window.onresize = consistentSize;
 

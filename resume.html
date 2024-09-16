@@ -35,14 +35,16 @@
 
                 <div>
                     <h2>Chenfeng Li's Resume</h2>
-                    <p> Review or download the <a href='file/ChenfengLiResume.pdf' target='_blank'> pdf resume</a>.</p>
+                    <p> View the alternative version or resume by clicking <button onclick="changeresume()">this button</button>. </p>
+                    <p> Review or download the <a href='file/ChenfengLiResume.pdf' target='_blank' id="resumehref"> PDF resume</a>.</p>
+                    
 
                 </div>
 
 
-                <object data="file/ChenfengLiResume.pdf#view=FitH&toolbar=0&navpanes=0" type="application/pdf" frameborder="0">
-                    <iframe src="https://docs.google.com/viewer?url=https://cfli.pages.dev/file/ChenfengLiResume.pdf&embedded=true" frameborder="0" height="100%" width="100%"></iframe>
-                </object>
+                <embed src="file/ChenfengLiResume.pdf" type="application/pdf" id="embedresume" style="display:block">
+
+                    
 
                 <div><p> Refresh the page if the file isn't properly loaded.</p><br></div>
 

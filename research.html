@@ -194,20 +194,29 @@
                                 <p>Help with modified the attention kernel of nanoGPT model, as Gaussian, polynomial and periodic.</p>
                                 <p>After the four models with different kernels are trained, prepare the AI2 Reasoning Challenge (ARC) and implement the ARC test to evaluate the performance of each model.
                             </li>
-                            <!--
+
 
                             <li>
                                 Details: 
                                 <button id='showLLM' onclick="view('LLM')"> View Details</button>
                                 <button id='hideLLM' class='detailitem' onclick="hide('LLM')"> Hide Details</button>
                                 <div id='LLMdetail' class='detailitem'> 
+                                    <p> The attention mechanism is the key of modern transformer-based language model. It solves the long-term memory problem of the traditional recurrent neural network RNN by parallelly evaluate the relevance of a token with all its prefix tokens.</p>
+                                    <p> Within multi-head attentional layer of a transformer, each token has a query \(Q_i\), a key \(K_i\) and a value \(V_i\) vector. Traditionally, we implement <b>dot product \(Q_i·K_j\)</b> to combine the query of current token and the keys of all prefix tokens, then apply softmax function and compute the weighted average of values to get the context vector.</p>
+                                    <p> We call the function to combine query and key the <b>kernel function</b>. For example, the above is called the <b>dot product / linear kernel</b>: \(k(\bold{x}, \bold{x'}) = \bold{x}·\bold{x'}\). According to the recent research, other types of non-linear kernels could also be used within the attention mechanism. For example: </p>
                                     <p>
-                                        Vacant, would add soon!
+                                        <ul>
+                                            <li> The <b>quadratic kernel</b>: \(k(\bold{x}, \bold{x'}) = (\bold{x}·\bold{x'}+1)^2\).</li>
+                                            <li> The <b>Gaussian kernel</b>: \(k(\bold{x}, \bold{x'}) = e^{-\frac{|\bold{x}-\bold{x'}|}{8}}\). </li>
+                                            <li> The <b>periodic kernel</b>: \(k(\bold{x}, \bold{x'}) = e^{-2sin(\frac{|\bold{x}-\bold{x'}|}{10})}\). </li>
+                                        </ul>
                                     </p>
+                                    <p> The goal of this research is to study the performance of these kernel function by modifying the relevant codes of <a href="https://github.com/karpathy/nanoGPT">NanoGPT</a>, training a GPT-2 with openWebText for each model, and evaluating them with few-shot learning on the language exams: <a href="https://paperswithcode.com/dataset/mmlu">MMLU (Massive Multitask Language Understanding)</a>, <a href="https://paperswithcode.com/dataset/arc">ARC (AI2 Reasoning Challenge)</a> and <a href="https://www.kaggle.com/datasets/dhruvildave/en-fr-translation-dataset">English-French Translation</a>.</p>
+                                    <p> According to our research, we found that in all the three exams, even though the GPT-2 model with some non-linear kernels has just fine performance in some specific exams, the dot product kernel has a much better performance overall. This result also explains why almost all modern language models (GPT-4, BERT, etc) uses dot product within the attention mechanism. </p>
                                 </div>
                             </li>
 
-                            -->
+
                         </ul>
 
                         </p>

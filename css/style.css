@@ -300,6 +300,11 @@ td:nth-of-type(5n+2){
   padding-top: 10px;
   padding-bottom:10px;
 }
+
+td:nth-of-type(5n+1){
+  width:25%
+}
+
 .badge{
   max-width: 50%;
   min-width: 80px;

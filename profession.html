@@ -36,7 +36,7 @@
         <main>
         	<div id="bodyText">
                 <div>
-                    <h2>Professional Information</h2>
+                    <h2>Professional Certificates and Experience</h2>
                     
                     <h3> Certifications</h3>
                     <div>
@@ -108,7 +108,7 @@
                                     <a href="https://learn.microsoft.com/en-us/credentials/certifications/mos-excel-2019/?practice-assessment-type=certification" target='_blank'>Official Page</a>
                                 </td>
                                 <td>March 7, 2024</td>
-                                <td>Does not expire.</td>
+                                <td>Does not expire</td>
                                 <td>
                                     <a href='file/certificates/Excel.pdf' target='_blank'> PDF file</a>;<br>
                                     <a href='https://www.credly.com/badges/9fd8e42d-a764-4500-8d2d-336b09c61270/public_url' target='_blank'> Digital credentials</a>
@@ -132,7 +132,7 @@
                             <tr id='last_shown' class="last_shown_tr">
                                 <td><img src='image/badges/GoogleAdvancedDA.png' class="badge"></td>
                                 <td>
-                                    <b>Google Advance Data Analytics Certificate</b><br>
+                                    <b>Google Advanced Data Analytics Certificate</b><br>
                                     <a href="https://grow.google/certificates/data-analytics/" target='_blank'>Official Page</a>
                                 </td>
                                 <td>June 28, 2023</td>
@@ -237,16 +237,16 @@
                     <ul>
                         <li> <a href="#SynergisticIT"><b>Data Scientist</b></a><br><i>Synergistic IT</i>, June, 2023 - Present
                             <ul>
-                                <li><a href='#predictSale'>Predictive Sales Analytics Platform</a></li>
+                                <li><a href='#AWS'>Cloud-Based Clinical Workload Monitoring System</a></li>
                                 <li><a href='#Azure'>Social Media Sentiment Analysis and Reporting</a></li>
-                                <li><a href='#AWS'>Hybrid Cloud Site-to-Site VPN Deployment for Secure Connectivity</a></li>
+                                <li><a href='#predictSale'>Predictive Sales Analytics Platform</a></li>
                                 <li><a href='#PowerBI2'>Sport Corporation Sales Analysis</a></li>
                                 <li><a href='#PowerBI'>Retail Chain Transaction Analysis</a></li>
                                 
                                 
                             </ul>
                         </li>
-                        <li> <a href="#Consultant"><b>Statistical Consultant</b></a><br><i>Univeristy of Chicago</i>, September - November, 2022
+                        <li> <a href="#Consultant"><b>Statistical Consultant</b></a><br><i>University of Chicago</i>, September - November, 2022
 
                         </li>
                     </ul>
@@ -261,15 +261,102 @@
 
 
 
+                <div class='researchitem' id='AWS'>
+                    <div>
+                        <h4>Cloud-Based Clinical Workload Monitoring System</h4>
+                    </div>
+                    <div class='information'>
+                        <ul>
+
+                            <li>
+                                Project Description:
+                                <p>
+                                    Designed and implemented a cloud-based data pipeline and analytics platform for a hospital to consolidate clinical, HR, and scheduling data for daily reporting on provider workload, documentation timing, and staffing efficiency. <br>
+                                    The system integrated AWS-based ETL pipelines, a Snowflake data warehouse, and Power BI dashboards to deliver near real-time insights for HR and clinical operations, enabling proactive workload balancing and reducing reporting latency by over 80%, presenting key metrics in an interactive and user-friendly format.
+                                </p>
+                            </li>
+
+                            <li>
+                                <b>My responsibility</b>:
+                                <ul>
+                                    <li>Designed and maintained a multi-stage ETL pipeline leveraging AWS DMS to capture daily CDC updates from multiple systems in Amazon RDS into a partitioned raw S3 zone, then using AWS Glue (PySpark) to transform and standardize datasets into a curated processed S3 zone for efficient loading into Snowflake.</li>
+                                    <li>Implemented data standardization, null handling, duplicate resolution, and timestamp alignment to ensure cross-system consistency.</li>
+                                    <li>Performed SQL-based data quality checks and remodeled the data into a star schema with SCD Type 2 dimensions in Snowflake to support business-critical reporting.</li>
+                                    <li>Applied column-level masking in Snowflake and aligned all data access controls with HIPAA compliance.</li>
+                                    <li>Automated pipeline orchestration using AWS Managed Workflows for Apache Airflow (MWAA), monitored workflows using AWS CloudWatch, and configured SNS alerts for pipeline failures or data anomalies.</li>
+                                    <li>Collaborated with BI analysts to define clinical workload metrics, built curated Snowflake views, and implemented row-level security for department-specific access.</li>
+                                    <li>Developed Power BI dashboards for HR and operations teams, visualizing appointment volumes, documentation delays, off-shift activity, and workload distribution by clinic and provider role.</li>
+                                    <li>Enabled HR to proactively identify staff overloads, reduce burnout risk, and improve resource allocation; cut reporting time from 12 hours to under 3 hours, supporting data-driven staffing decisions across multiple clinics.</li>
+                                    <li>Trained users on pipeline and dashboard functionality and interpretation, facilitating adoption for the HR team.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                Technology Used:
+                                <p>
+                                    AWS (Glue, S3, RDS, DMS, CloudWatch, SNS, IAM, KMS, CloudFormation, MWAA/Airflow), Snowflake, SQL, PySpark, Power BI, Python
+                                </p>
+                            </li>
+                        </ul>
+                        <br>
+                    </div>
+                </div>
+                <hr><br>
+
+
+                <div class='researchitem' id='Azure'>
+                    <figure contenteditable='false' class='large'>
+                        <img src='image/profession/sentimentanalysis.png'>
+                        <figcaption dir='auto' style="color: rgb(0,76,0)">Permission granted to publish this figure.</figcaption>
+                    </figure>
+                    <div>
+                        <h4>Social Media Sentiment Analysis and Reporting</h4>
+                    </div>
+                    <div class='information'>
+                        <ul>
+                            <li>
+                                Project Description:
+                                <p>
+                                    Partnered with a fellow data scientist to design and deploy an Azure-based NLP system for sentiment analysis on 16,000 post-sale reviews from an online clothing store. 
+                                    Developed an Azure Data Factory ingestion pipeline and implemented a PySpark-based Azure Databricks workflow to clean, process, and classify review text using a BERT-based model. 
+                                    Visualized sentiment trends and generated automated weekly reports to inform product feedback analysis and guide marketing strategies.
+                                </p>
+                            </li>
+                            <li>
+                                <b>My responsibility</b>:
+                                <ul>
+                                    <li>Configured an Azure Data Factory pipeline to ingest data from an on-premise database into Azure Data Lake Storage, scheduled for weekly updates.</li>
+                                    <li>Developed an Azure Databricks notebook using PySpark to perform data cleaning, deduplication, and null handling.</li>
+                                    <li>Implemented NLP workflows for text cleaning, lemmatization, and stop-word removal; performed sentiment intensity analysis using a BERT-based model from Hugging Face Transformers.</li>
+                                    <li>Trained and fine-tuned a Random Forest classifier to predict sentiment labels, optimizing preprocessing parameters to improve classification accuracy.</li>
+                                    <li>Evaluated model performance and produced comprehensive sentiment trend reports by product and time period, achieving an overall satisfactory rate of 96% with an upward trend.</li>
+                                    <li>Automated the end-to-end workflow—from ingestion to reporting—using ADF triggers and Databricks job scheduling.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Technology Used:
+                                <p>
+                                    Python, PySpark, Azure Data Factory, Azure Databricks, Azure Data Lake Storage, Hugging Face Transformers, BERT, Random Forest, NLP
+                                </p>
+                            </li>
+                        </ul>
+                        <br>
+                        <figure contenteditable='false' class='small'>
+                            <img src='image/profession/sentimentanalysis.png'>
+                            <figcaption dir='auto' style="color: rgb(0,76,0)">Permission granted to publish this figure.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <hr><br>
+
+
+
                 <div class='researchitem' id='predictSale'>
                     <div>
                         <h4> Predictive Sales Analytics Platform</h4>
                     </div>
                     <div class='information'>
                         <ul>
-                            <li>
-                                Period: Sep 2024 - Present
-                            </li>
 
                             <li>
                                 Project Description: 
@@ -304,95 +391,9 @@
                 <hr><br>
 
 
-                <div class='researchitem' id='Azure'>
-                    <figure contenteditable='false' class='large'>
-                        <img src='image/profession/sentimentanalysis.png'>
-                        <figcaption dir='auto' style="color: rgb(0,76,0)">Permission granted to publish this figure.</figcaption>
-                    </figure>
-                    <div>
-                        <h4> Social Media Sentiment Analysis and Reporting</h4>
-                    </div>
-                    <div class='information'>
-                        <ul>
-                            <li>
-                                Period: May - Aug, 2024
-                            </li>
-
-                            <li>
-                                Project Description: 
-                                <p>
-                                    Developed an Azure-based system with a data scientist partner for sentiment analysis on 16,000 post-sale reviews for an online clothing store on social media. Ingested data with Data Factory pipeline, cleaned data using SQL in Synapse Analytic, and implemented NLP techniques with a BERT-based model in Azure Databricks for sentiment analysis. Concluded a satisfactory rate of 96% and trend upward over time.
-                                </p>
-                            </li>
-
-                            <li>
-                                <b>My responsibility</b>: 
-                                <ul>
-                                    <li>Configured an Azure Data Factory pipeline to ingest data from on-premise database to Azure Data Lake Storage.</li>
-                                    <li>Cleaned and filtered data using SQL scripts in Azure Synapse Analytics.</li>
-                                    <li>Designed a notebook in Azure Databricks for data processing, analysis, and visualization.</li>
-                                    <li>Implemented NLP models for text cleaning, lemmatization, stop-word removal, and perform sentiment intensity analysis with BERT based model from Hugging Face Transformers.</li>
-                                    <li>Trained and evaluated a random forest classifier model to predict the sentiment of the apparel reviews.</li>
-                                    <li>Visualized results by time and item and created comprehensive reports.</li>
-                                    <li>Updated the dataset with a scheduled trigger in Azure Data Factory on a weekly basis.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                Technology Used:
-                                <p>Python, Database management, Azure Data Factory, Synapse Analytics, Databricks, NLP, Hugging
-                                    Face, BERT.</p>
-                            </li>
-                        </ul>
-                        <br>
-                        <figure contenteditable='false' class='small'>
-                            <img src='image/profession/sentimentanalysis.png'>
-                            <figcaption dir='auto' style="color: rgb(0,76,0)">Permission granted to publish this figure.</figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <hr><br>
+                
 
             
-                <div class='researchitem' id='AWS'>
-                    <div>
-                        <h4> Hybrid Cloud Site-to-Site VPN Deployment for Secure Connectivity</h4>
-                    </div>
-                    <div class='information'>
-                        <ul>
-                            <li>
-                                Period: Jan - Apr, 2024
-                            </li>
-
-                            <li>
-                                Project Description: 
-                                <p>
-                                    Implemented a hybrid cloud architecture that connects an on-premises data center to an AWS VPC using a Site-to-Site VPN with configuring multiple AWS services. Solved the challenge of seamless, secure, and scalable integration between two environments improving operational efficiency and data protection.
-                                </p>
-                            </li>
-
-                            <li>
-                                <b>My responsibility</b>: 
-                                <ul>
-                                    <li>Set up VPCs in two regions with appropriate subnets, route tables, and internet gateways.</li>
-                                    <li>Launched Amazon Linux 2 instances in both regions with secure groups allowing SSH and ICMP traffic.</li>
-                                    <li>Established Site-to-Site VPN connection using virtual private gateway with Openswan configuration.</li>
-                                    <li>Utilized Amazon S3 for critical data backup, enabling versioning and server-side encryption.</li>
-                                    <li>Implemented IAM roles and policies for secure access management, ensuring least privilege principles.</li>
-                                    <li>Monitored instance performance, network traffic and VPN connection using AWS CloudWatch.</li>
-                                    <li>Configured Amazon SNS to send alerts for critical events.</li>
-                                    <li>Automated infrastructure deployment with AWS CloudFormation for consistent, repeatable setups.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                Technology Used:
-                                <p>AWS Instances, security groups, VPC, Site-to-Site VPN, IAM, CloudWatch, SNS, CloudFormation.</p>
-                            </li>
-                        </ul>
-                        <br>
-                    </div>
-                </div>
-                <hr><br>
-
 
                 <div class='researchitem' id='PowerBI2'>
                     <figure contenteditable='false' class='large'>
@@ -405,9 +406,6 @@
                     </div>
                     <div class='information'>
                         <ul>
-                            <li>
-                                Period: Sep - Dec, 2023
-                            </li>
 
                             <li>
                                 Project Description: 
@@ -456,9 +454,6 @@
                     </div>
                     <div class='information'>
                         <ul>
-                            <li>
-                                Period: Jun - Aug, 2023
-                            </li>
 
                             <li>
                                 Project Description: 
@@ -471,8 +466,8 @@
                                 <b>My responsibility</b>: 
                                 <ul>
                                     <li>Utilized Power Query to clean and transform data, including splitting and unpivoting the Product column.</li>
-                                    <li>Developer advanced DAX formulas to create calculated columns and measures for in-depth analysis.</li>
-                                    <li>Created detailed Product Analysis and Customer Analysis pages featuring key metrics, slicers, and interactive　visuals such as line charts, treemaps, and ribbon charts.</li>
+                                    <li>Developed advanced DAX formulas to create calculated columns and measures for in-depth analysis.</li>
+                                    <li>Created detailed Product Analysis and Customer Analysis pages featuring key metrics, slicers, and interactive visuals such as line charts, treemaps, and ribbon charts.</li>
                                     <li>Ensured alignment and consistency across all dashboard pages for a cohesive user experience.</li>
                                     <li>Integrated product and customer analysis visuals into a combined Retail Analysis Page with interactive buttons for toggling between views using bookmarks.</li>
                                     <li>Designed and presented slides summarizing key insights and findings to stakeholders, facilitating informed decision-making.</li>
@@ -529,7 +524,7 @@
 
 
         <footer>
-            <p id='update'>Last updated on Oct 21, 2024</p>
+            <p id='update'>Last updated on Aug 14, 2025</p>
             <p> &copy Chenfeng Li, 2023-2025</p>
             <p>
                 <a href='mailto:cfli@chenfengli.com'><i class="fa-regular fa-envelope"></i></a>

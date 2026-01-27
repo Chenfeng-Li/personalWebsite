@@ -20,7 +20,7 @@
             <i id="navbar" class="fa fa-bars" aria-hidden="true" isopen="True" onclick="clicknav()"></i>
             <div id="mobileNavBar">
                 <ul id='navList'>
-                    <li id="abo"><a id='top' href='index.html' aria-label='Home' class='navContent'>About Me</a></li>
+                    <li id="abo"><a id='top' href='index.html' aria-label='Home' class='navContent active'>About Me</a></li>
                     <li id="resume"><a  href='resume.html' aria-label='Resume' class='navContent'>Resume</a></li>
                     <li id="pro"><a  href='profession.html' aria-label='Profession' class='navContent'>Profession</a></li>
                     <li id="res"><a  href='research.html' aria-label='Research' class='navContent'>Research</a></li>
@@ -44,7 +44,7 @@
 
                 <p>
                     Upload an aerial photo:
-                    <input id="imageInput" type="file" name="image" accept="image/*" />
+                    <input id="imageInput" type="file" accept="image/*" />
                 </p>
 
                 <p>
@@ -56,110 +56,100 @@
 
                 <p>
                     <button id="submitBtn" type="button">Show the label prediction</button>
-                    <span id="statusText" style="margin-left: 10px;"></span>
+                    <span id="statusText"></span>
                 </p>
 
-                <div style="margin-top:12px;">
-                <div style="margin-bottom:24px;">
-                    <p style="margin:0 0 6px 0;">Input preview</p>
-                    <img
-                    id="inputPreview"
-                    style="max-width:420px; display:none; border:1px solid #ddd; border-radius:8px;"
-                    />
-                </div>
-
-                <div>
-                    <p style="margin:0 0 6px 0;">Model output</p>
-                    <img
-                    id="outputPreview"
-                    style="max-width:420px; display:none; border:1px solid #ddd; border-radius:8px;"
-                    />
+                <div class="model-figures">
+                    <!-- Input preview -->
+                    <figure contenteditable="false" class="figureimg">
+                    <img id="inputPreview" alt="Input preview" style="display:none;" />
+                    <figcaption>Input preview</figcaption>
+                    </figure>
+                    
+                    
+                    <!-- Output preview -->
+                    <figure contenteditable="false" class="figureimg">
+                    <img id="outputPreview" alt="Model output" style="display:none;" />
+                    <figcaption>Model output</figcaption>
+                    </figure>
                 </div>
                 </div>
 
-            </div>
+                <script>
 
-            <script>
-            // >>> CHANGE THIS if your API URL changes:
-            const API_BASE = "https://chenfeng-image-api-432979633430.us-central1.run.app";
-            const PREDICT_URL = `${API_BASE}/predict/image`;
+                    const API_BASE = "https://chenfeng-image-api-432979633430.us-central1.run.app";
+                    const PREDICT_URL = `${API_BASE}/predict/image`;
 
-            const imageInput = document.getElementById("imageInput");
-            const combineCheckbox = document.getElementById("combineCheckbox");
-            const submitBtn = document.getElementById("submitBtn");
-            const statusText = document.getElementById("statusText");
-            const inputPreview = document.getElementById("inputPreview");
-            const outputPreview = document.getElementById("outputPreview");
+                    const imageInput = document.getElementById("imageInput");
+                    const combineCheckbox = document.getElementById("combineCheckbox");
+                    const submitBtn = document.getElementById("submitBtn");
+                    const statusText = document.getElementById("statusText");
+                    const inputPreview = document.getElementById("inputPreview");
+                    const outputPreview = document.getElementById("outputPreview");
 
-            let selectedFile = null;
+                    let selectedFile = null;
 
-            // 1) When a photo is uploaded, display it
-            imageInput.addEventListener("change", () => {
-                const file = imageInput.files && imageInput.files[0];
-                selectedFile = file || null;
+                    // 1) Show input preview when a photo is uploaded
+                    imageInput.addEventListener("change", () => {
+                        const file = imageInput.files && imageInput.files[0];
+                        selectedFile = file || null;
 
-                outputPreview.style.display = "none";
-                outputPreview.src = "";
+                        // clear old output
+                        outputPreview.style.display = "none";
+                        outputPreview.src = "";
 
-                if (!file) {
-                inputPreview.style.display = "none";
-                inputPreview.src = "";
-                statusText.textContent = "";
-                return;
-                }
+                        if (!file) {
+                        inputPreview.style.display = "none";
+                        inputPreview.src = "";
+                        statusText.textContent = "";
+                        return;
+                        }
 
-                // Preview input image
-                const url = URL.createObjectURL(file);
-                inputPreview.src = url;
-                inputPreview.style.display = "block";
-                statusText.textContent = "";
-            });
+                        const url = URL.createObjectURL(file);
+                        inputPreview.src = url;
+                        inputPreview.style.display = "block";
+                        statusText.textContent = "";
+                    });
 
-            // 3) On submit: call API and display output
-            submitBtn.addEventListener("click", async () => {
-                if (!selectedFile) {
-                statusText.textContent = "Please choose an image first.";
-                return;
-                }
+                    // 3) Submit -> call API -> show output
+                    submitBtn.addEventListener("click", async () => {
+                        if (!selectedFile) {
+                        statusText.textContent = "Please choose an image first.";
+                        return;
+                        }
 
-                const combine = combineCheckbox.checked; // 2) checkbox -> combine
-                const url = `${PREDICT_URL}?combine=${combine ? "true" : "false"}`;
+                        const combine = combineCheckbox.checked; // 2) checkbox -> combine
+                        const url = `${PREDICT_URL}?combine=${combine ? "true" : "false"}`;
 
-                // Prepare multipart/form-data
-                const form = new FormData();
-                // IMPORTANT: the field name must match FastAPI parameter name: file: UploadFile = File(...)
-                form.append("file", selectedFile);
+                        const form = new FormData();
+                        form.append("file", selectedFile); // must be "file" to match FastAPI param name
 
-                try {
-                submitBtn.disabled = true;
-                statusText.textContent = "Running model...";
-                outputPreview.style.display = "none";
-                outputPreview.src = "";
+                        try {
+                        submitBtn.disabled = true;
+                        statusText.textContent = "Running model...";
 
-                const resp = await fetch(url, {
-                    method: "POST",
-                    body: form,
-                });
+                        const resp = await fetch(url, { method: "POST", body: form });
 
-                if (!resp.ok) {
-                    const text = await resp.text();
-                    throw new Error(`API error ${resp.status}: ${text}`);
-                }
+                        if (!resp.ok) {
+                            const text = await resp.text();
+                            throw new Error(`API error ${resp.status}: ${text}`);
+                        }
 
-                const blob = await resp.blob();  // should be image/png
-                const outUrl = URL.createObjectURL(blob);
+                        const blob = await resp.blob(); // image/png
+                        const outUrl = URL.createObjectURL(blob);
 
-                outputPreview.src = outUrl;
-                outputPreview.style.display = "block";
-                statusText.textContent = "Done.";
-                } catch (err) {
-                console.error(err);
-                statusText.textContent = "Failed. Open DevTools console for details.";
-                } finally {
-                submitBtn.disabled = false;
-                }
-            });
-            </script>
+                        outputPreview.src = outUrl;
+                        outputPreview.style.display = "block";
+                        statusText.textContent = "Done.";
+                        } catch (err) {
+                        console.error(err);
+                        statusText.textContent = "Failed. Check browser console.";
+                        } finally {
+                        submitBtn.disabled = false;
+                        }
+                    });
+                </script>
+
 
 
                     <br><br>

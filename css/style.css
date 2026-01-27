@@ -425,6 +425,12 @@ footer i{
     margin:0;
   }
 
+.figureimg{
+    width:70%;
+    margin:0;
+    margin-left:2.5%;
+}
+
   embed{
     width:77vw;
     margin-left:1.5vw;

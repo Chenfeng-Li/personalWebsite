@@ -20,7 +20,7 @@
             <i id="navbar" class="fa fa-bars" aria-hidden="true" isopen="True" onclick="clicknav()"></i>
             <div id="mobileNavBar">
                 <ul id='navList'>
-                    <li id="abo"><a id='top' href='index.html' aria-label='Home' class='navContent'>About Me</a></li>
+                    <li id="abo"><a id='top' href='index.html' aria-label='Home' class='navContent active'>About Me</a></li>
                     <li id="resume"><a  href='resume.html' aria-label='Resume' class='navContent'>Resume</a></li>
                     <li id="pro"><a  href='profession.html' aria-label='Profession' class='navContent'>Profession</a></li>
                     <li id="res"><a  href='research.html' aria-label='Research' class='navContent'>Research</a></li>
@@ -61,14 +61,14 @@
 
                 <div class="model-figures">
                     <!-- Input preview -->
-                    <figure contenteditable="false" class="figureimg">
+                    <figure contenteditable="false" class="figureimg2">
                     <img id="inputPreview" alt="Input preview" style="display:none;" />
                     <figcaption>Input preview</figcaption>
                     </figure>
                     
                     
                     <!-- Output preview -->
-                    <figure contenteditable="false" class="figureimg">
+                    <figure contenteditable="false" class="figureimg2">
                     <img id="outputPreview" alt="Model output" style="display:none;" />
                     <figcaption>Model output</figcaption>
                     </figure>
@@ -155,17 +155,17 @@
                     <br><br>
                     <div id='gallary'>
                         <h3>Example:</h3>
-                        <figure contenteditable='false' class='figureimg'>
+                        <figure contenteditable='false' class='figureimg2'>
                             <img src='image/model/test.png'>
                             <figcaption dir='auto'>Upload an aerial photo</figcaption>
                         </figure>
 
-                        <figure contenteditable='false' class='figureimg'>
+                        <figure contenteditable='false' class='figureimg2'>
                             <img src='image/model/label.png'>
                             <figcaption dir='auto'>Label prediction of land type</figcaption>
                         </figure>
 
-                        <figure contenteditable='false' class='figureimg'>
+                        <figure contenteditable='false' class='figureimg2'>
                             <img src='image/model/combined.png'>
                             <figcaption dir='auto'>Alternatively. Cover labels on the original photo</figcaption>
                         </figure>

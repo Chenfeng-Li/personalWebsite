@@ -32,14 +32,16 @@ function clicknav(){
 }
 
 
-function view(id,cls=false){
+function view(id, cls=false, helper=""){
 	if(!cls){
 		document.getElementById(id+'detail').style.display='block';
 		document.getElementById('hide'+id).style.display='inline';
 		document.getElementById('show'+id).style.display='none';
 	}else{
-		document.getElementById('hide_cert').style.display='block';
-		document.getElementById('show_cert').style.display='none';
+		if(helper){
+			document.getElementById('hide_'+helper).style.display='block';
+			document.getElementById('show_'+helper).style.display='none';
+		}
 		var toView = document.getElementsByClassName(id);
 		for(var i=0; i<toView.length;i++){
 			toView[i].style.display="table-row";
@@ -49,14 +51,16 @@ function view(id,cls=false){
 	}
 }
 			
-function hide(id, cls=false){
+function hide(id, cls=false, helper=""){
 	if(cls==false){
 		document.getElementById(id+'detail').style.display='none';
 		document.getElementById('hide'+id).style.display='none';
 		document.getElementById('show'+id).style.display='inline';
 	}else{
-		document.getElementById('hide_cert').style.display='none';
-		document.getElementById('show_cert').style.display='block';
+		if(helper){
+			document.getElementById('hide_'+helper).style.display='none';
+			document.getElementById('show_'+helper).style.display='block';
+		}
 		var toHide = document.getElementsByClassName(id);
 		for(var i=0; i<toHide.length;i++){
 			toHide[i].style.display="none";

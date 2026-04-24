@@ -251,6 +251,10 @@ table{
 
 }
 
+.cert_table{
+  display:none;
+}
+
 caption{
 	text-transform: uppercase;
 	background-color: #666666;

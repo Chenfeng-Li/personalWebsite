@@ -50,9 +50,42 @@
                 <div>
                     Here are my professional certifications, which are valid at the latest update of this page.
                 </div>
-                <br>
 
-                <section style="overflow: scroll">
+                <ul>
+                    <li>
+                        <b>Microsoft Certified: Azure Data Engineer Associate</b><br>
+                        Valid: July 1, 2024 – July 2, 2026
+                    </li>
+                    <li>
+                        <b>AWS Certified Cloud Practitioner</b><br>
+                        Valid: May 9, 2024 – May 9, 2027
+                    </li>
+                    <li>
+                        <b>Microsoft Certified: Power BI Data Analyst Associate</b><br>
+                        Valid: March 14, 2024 – March 14, 2027
+                    </li>
+                    <li>
+                        <b>Microsoft Office Specialist: Excel Associate (Office 2019)</b><br>
+                        Valid: March 7, 2024 – Does not expire
+                    </li>
+                    <li>
+                        <b>Deep Learning Specialization</b><br>
+                        Valid: July 11, 2023 – Does not expire
+                    </li>
+                    <li>
+                        <b>Google Advanced Data Analytics Certificate</b><br>
+                        Valid: June 28, 2023 – Does not expire
+                    </li>
+                </ul>
+                <div>
+                    <p id="show_table">To show more details about certificates, click this <button
+                            onclick="view('cert_table',true,'table')"> button</button>.</p>
+                    <p id="hide_table" style="display: none">To hide the details of certificates, click
+                        this <button onclick="hide('cert_table',true,'table')"> button</button>.</p>
+                </div>
+                
+
+                <section style="overflow: scroll", class="cert_table">
                     <table class="Certificates">
                         <caption>Professional Certificates</caption>
                         <thead>
@@ -107,7 +140,7 @@
                                         target='_blank'>Official Page</a>
                                 </td>
                                 <td>March 14, 2024</td>
-                                <td>March 14, 2026</td>
+                                <td>March 14, 2027</td>
                                 <td>
                                     <a href='file/certificates/PowerBI.pdf' target='_blank'> PDF file</a>;<br>
                                     <a href='https://learn.microsoft.com/api/credentials/share/en-us/ChenfengLi-0139/7A945A2DDA61438E?sharingId=9E56B31524D81C1A'
@@ -243,13 +276,12 @@
                         </tbody>
                     </table>
                 </section>
-                <div>
+                <div class="cert_table">
                     <p id="show_cert">To show the weak-related and expired certificates, click this <button
-                            onclick="view('cert_hide',true)"> button</button>.</p>
+                            onclick="view('cert_hide',true,'cert')"> button</button>.</p>
                     <p id="hide_cert" style="display: none">To hide the weak-related and expired certificates, click
-                        this <button onclick="hide('cert_hide',true)"> button</button>.</p>
+                        this <button onclick="hide('cert_hide',true,'cert')"> button</button>.</p>
                 </div>
-
 
 
 
@@ -266,6 +298,13 @@
             <section id='menu'>
                 <b>Menu</b>
                 <ul>
+                    <li> <a href="#PD"><b>Machine Learning Engineer Intern</b></a><br><i>Packet Digital</i>, June, 2023 -
+                        Present
+                        <ul>
+                            <li><a href='#Polli'>Cloud-Based Clinical Workload Monitoring System</a></li>
+                            <li><a href='#RD'>Social Media Sentiment Analysis and Reporting</a></li>
+                        </ul>
+                    </li>
                     <li> <a href="#SynergisticIT"><b>Data Scientist</b></a><br><i>Synergistic IT</i>, June, 2023 -
                         Present
                         <ul>
@@ -286,10 +325,129 @@
             </section>
             <br>
             <hr><br>
+            
+            <div class="researchitem" id="PD">
+                <h3>Machine Learning Engineer Intern</h3>
+                <p>Packet Digital, Fargo, ND<br>October, 2025 - Present</p>
+            </div>
+            <hr style="border-top: dotted grey">
+
+            <div class='researchitem' id='Polli'>
+                <div>
+                    <h4>Weed Detection System Optimization for Drone-Based Agricultural Analytics (Polli)</h4>
+                </div>
+                <div class='information'>
+                    <ul>
+
+                        <li>
+                            Project Description:
+                            <p>
+                                Redesigned the end-to-end data and modeling pipeline for high-resolution aerial weed 
+                                detection in Polli, introducing scalable human-in-the-loop annotation and optimizing 
+                                small-object detection, resulting in improved model generalization and detection performance.
+                            </p>
+                        </li>
+
+                        <li>
+                            <b>My responsibility</b>:
+                            <ul>
+                                <li>Diagnosed dataset bias (single-location sampling) and proposed a multi-field data 
+                                    acquisition strategy to improve spatial generalization and reduce overfitting.</li>
+                                <li>Designed a human-in-the-loop annotation system using Label Studio and AWS, enabling 
+                                    biologists to refine model-generated bounding boxes without direct access to raw data.</li>
+                                <li>Built an event-driven data pipeline using AWS Lambda to convert proprietary annotations 
+                                    into Label Studio JSON and automatically synchronize new images and predictions into 
+                                    annotation workflows.</li>
+                                <li>Deployed a secure Label Studio platform in AWS App Runner with data ingested in AWS 
+                                    S3, with controlled access via VPN.</li>
+                                <li>Led cross-functional sessions with biologists to define annotation standards, improving 
+                                    label consistency and data quality.</li>
+                                <li>Engineered preprocessing pipeline to tile high-resolution images into 640×640 patches 
+                                    with overlap after the annotated data were ready, preserving small-object features and 
+                                    reducing edge information loss.</li>
+                                <li>Applied data augmentation (geometric and brightness transformation) to increase dataset 
+                                    diversity and model robustness.</li>
+                                <li>Fine-tuned the existing YOLOv12m baseline model using newly annotated and augmented 
+                                    data. Conducted comparative evaluation across multiple architectures (YOLO variants, 
+                                    Faster R-CNN), identifying YOLO26m as marginally higher in accuracy.</li>
+                                <li>Selected the fine-tuned YOLOv12m model for deployment based on a balanced evaluation 
+                                    of accuracy, latency, and system compatibility, improving performance to 90% mAP@0.5.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Technology Used:
+                            <p>
+                                Python, PyTorch, YOLO, Faster R-CNN, AWS (S3, Lambda, App Runner), Label Studio, 
+                                Data Annotation, Computer Vision, Object Detection, Image Processing
+                            </p>
+                        </li>
+                    </ul>
+                    <br>
+                </div>
+            </div>
+            <hr><br>
+
+
+
+            <div class='researchitem' id='RD'>
+                <div>
+                    <h4>Early Battery Degradation Prediction & Feasibility Analysis</h4>
+                </div>
+                <div class='information'>
+                    <ul>
+
+                        <li>
+                            Project Description:
+                            <p>
+                                Evaluated the feasibility of early-life battery degradation prediction using long-term 
+                                time-series data, identifying key data limitations and domain gaps affecting model 
+                                generalization from lab-scale datasets to real-world battery systems.
+                            </p>
+                        </li>
+
+                        <li>
+                            <b>My responsibility</b>:
+                            <ul>
+                                <li>Analyzed longitudinal battery lifecycle data (~1500 cycles over 10 months) including 
+                                    voltage, current, capacity, and resistance signals across charge–discharge cycles.</li>
+                                <li>Built diagnostic tools and data visualization pipelines to validate cycle consistency 
+                                    and inspect degradation trends over time.</li>
+                                <li>Performed anomaly detection and data cleaning to remove irregular and corrupted cycles, 
+                                    improving dataset reliability.</li>
+                                <li>Engineered statistical and temporal features to capture degradation patterns across 
+                                    lifecycle stages.</li>
+                                <li>Determined that single-pack data lacked sufficient population variance for robust 
+                                    supervised learning and generalization.</li>
+                                <li>Trained an XGBoost model on the MATR benchmark dataset to predict end-of-life (80% capacity) 
+                                    from early-100-cycle features as a controlled baseline.</li>
+                                <li>Evaluated model transferability and identified domain mismatch between lab-scale datasets 
+                                    and real-world battery pack behavior. Informed project reprioritization by demonstrating that 
+                                    data constraints were the primary bottleneck instead of model selection.</li>
+                                <li>Explored scalable ML frameworks (BEEP, BatteryML) and modeling strategies for battery analytics 
+                                    prior to project reprioritization.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Technology Used:
+                            <p>
+                                Python, Pandas, NumPy, XGBoost, Time-Series Analysis, Feature Engineering, Statistical Modeling, 
+                                Data Cleaning, Visualization
+                            </p>
+                        </li>
+                    </ul>
+                    <br>
+                </div>
+            </div>
+            <hr><br>
+
+
+
 
             <div class="researchitem" id="SynergisticIT">
                 <h3>Data Scientist</h3>
-                <p>Synergistic IT, Fremont, CA (Remote) <br>June, 2023 - Present</p>
+                <p>Synergistic IT, Fremont, CA (Remote) <br>June, 2023 - August, 2025</p>
             </div>
             <hr style="border-top: dotted grey">
 
@@ -616,7 +774,7 @@
 
 
     <footer>
-        <p id='update'>Last updated on Feb 25, 2026</p>
+        <p id='update'>Last updated on Apr 23, 2026</p>
         <p> &copy Chenfeng Li, 2023-2026</p>
         <p>
             <a href='mailto:cfli@chenfengli.com'><i class="fa-regular fa-envelope"></i></a>
@@ -625,10 +783,5 @@
 
         </p>
     </footer>
-
-
-
 </body>
-
-
 </html>

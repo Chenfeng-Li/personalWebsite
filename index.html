@@ -39,9 +39,13 @@
 
             <div id='aboutimg'>
                 <h2>About Me</h2>
-                <figure contenteditable='false' class='figureimg'>
+                <figure contenteditable='false' class='figureimg' id="meIL" onclick="switchimg('meIL','meND')">
                     <img src='image/me.jpeg'>
-                    <figcaption dir='auto'>August 2023 at Chicago</figcaption>
+                    <figcaption dir='auto'>August 2023 in Chicago, IL</figcaption>
+                </figure>
+                <figure contenteditable='false' class='figureimg' id="meND" onclick="switchimg('meND','meIL')">
+                    <img src='image/meND.png'>
+                    <figcaption dir='auto'>April 2026 in Fargo, ND</figcaption>
                 </figure>
                 <div id='about'>
 
@@ -56,14 +60,21 @@
                     <p>
                         I am currently an intern at <b>Packet Digital</b> in North Dakota, where I have been working
                         since October 2025.
-                        The company specializes in battery and drone technologies. My job duty across various fields, including
-                        construction supervision, SCADA data management, and most importantly, involving in multiple machine
+                        The company specializes in battery and drone technologies. My job duty across various fields,
+                        including
+                        construction supervision, SCADA data management, and most importantly, involving in multiple
+                        machine
                         learning projects across various team.
-                        My most recent project is to participate in a project <b>Polli</b>, a drone flight planning and aerial
-                        photos analytics software, to finetune a thistle detection model with high resolution aerial photos. 
-                        I deployed an annotation software Label Studio in AWS to allow external biologists create or modify 
-                        annotation on the new data, and then preprocess the annotated image and finetune the model. Besides, 
-                        I also managed to built an early-stage battery degradation prediction model for a newly developed cell R&D lab in the company.
+                        My most recent project is to participate in a project <b>Polli</b>, a drone flight planning and
+                        aerial
+                        photos analytics software, to finetune a thistle detection model with high resolution aerial
+                        photos.
+                        I deployed an annotation software Label Studio in AWS to allow external biologists create or
+                        modify
+                        annotation on the new data, and then preprocess the annotated image and finetune the model.
+                        Besides,
+                        I also managed to built an early-stage battery degradation prediction model for a newly
+                        developed cell R&D lab in the company.
 
 
                     </p>
@@ -135,4 +146,5 @@
     </footer>
 
 </body>
+
 </html>

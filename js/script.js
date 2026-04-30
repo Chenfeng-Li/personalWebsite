@@ -1,3 +1,36 @@
+var defaultStyle = 'css/style.css';
+var fancyStyle = 'css/fancy_style.css';
+
+function applySavedStyle() {
+	var styleLink = document.getElementById('site-style');
+	var savedStyle = localStorage.getItem('siteStyle');
+	if (styleLink && savedStyle === fancyStyle) {
+		styleLink.href = fancyStyle;
+	}
+}
+
+function setStyleToggleText() {
+	var toggleButton = document.getElementById('styleToggle');
+	var styleLink = document.getElementById('site-style');
+	if (!toggleButton || !styleLink) {
+		return;
+	}
+	toggleButton.textContent = styleLink.getAttribute('href') === fancyStyle ? 'Use classic style' : 'Use fancy style';
+}
+
+function toggleStyle() {
+	var styleLink = document.getElementById('site-style');
+	if (!styleLink) {
+		return;
+	}
+	var nextStyle = styleLink.getAttribute('href') === fancyStyle ? defaultStyle : fancyStyle;
+	styleLink.href = nextStyle;
+	localStorage.setItem('siteStyle', nextStyle);
+	setStyleToggleText();
+}
+
+applySavedStyle();
+
 window.onscroll = keepheader;
 
 function keepheader() {
@@ -111,3 +144,4 @@ function changeresume() {
 
 window.onresize = consistentSize;
 
+window.addEventListener('DOMContentLoaded', setStyleToggleText);

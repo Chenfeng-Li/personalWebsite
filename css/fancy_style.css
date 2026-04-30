@@ -535,6 +535,10 @@ table {
   box-shadow: 0 16px 40px rgba(18, 33, 38, 0.12);
 }
 
+.cert_table {
+  display: none;
+}
+
 caption {
   padding: 14px 18px;
   color: #ffffff;
